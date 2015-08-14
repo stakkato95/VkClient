@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "VKCUser.h"
+#import "VKCNSString.h"
 
 @interface ViewController ()
 
@@ -16,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    VKCUser *user = [VKCUser userWithFirstName:@"Artsiom" secondName:@"Kaliaha"];
+    NSString *str = @"";
+    BOOL result = [str vkc_isNilOrEmpty];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

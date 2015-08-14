@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		998249011B7DD82D00131A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249001B7DD82D00131A26 /* ViewController.m */; };
+		998249051B7DE99A00131A26 /* VKCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249041B7DE99A00131A26 /* VKCUser.m */; };
+		998249081B7DF66A00131A26 /* VKCCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249071B7DF66A00131A26 /* VKCCity.m */; };
+		999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1111B7E30BD00FF3912 /* VKCApi.m */; };
+		999DE1191B7E5D7600FF3912 /* VKCNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1181B7E5D7600FF3912 /* VKCNSString.m */; };
 		99E53CCD1B7CD4F3007F1231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CCC1B7CD4F3007F1231 /* main.m */; };
 		99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CCF1B7CD4F3007F1231 /* AppDelegate.m */; };
 		99E53CD31B7CD4F3007F1231 /* VkClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CD11B7CD4F3007F1231 /* VkClient.xcdatamodeld */; };
@@ -30,6 +34,14 @@
 /* Begin PBXFileReference section */
 		998248FF1B7DD82D00131A26 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
 		998249001B7DD82D00131A26 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
+		998249031B7DE99A00131A26 /* VKCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCUser.h; sourceTree = "<group>"; };
+		998249041B7DE99A00131A26 /* VKCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCUser.m; sourceTree = "<group>"; };
+		998249061B7DF66A00131A26 /* VKCCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCCity.h; sourceTree = "<group>"; };
+		998249071B7DF66A00131A26 /* VKCCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCCity.m; sourceTree = "<group>"; };
+		999DE1101B7E30BD00FF3912 /* VKCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCApi.h; path = Api/VKCApi.h; sourceTree = "<group>"; };
+		999DE1111B7E30BD00FF3912 /* VKCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCApi.m; path = Api/VKCApi.m; sourceTree = "<group>"; };
+		999DE1171B7E5D7600FF3912 /* VKCNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCNSString.h; path = Extension/VKCNSString.h; sourceTree = "<group>"; };
+		999DE1181B7E5D7600FF3912 /* VKCNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCNSString.m; path = Extension/VKCNSString.m; sourceTree = "<group>"; };
 		99E53CC71B7CD4F3007F1231 /* VkClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E53CCB1B7CD4F3007F1231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E53CCC1B7CD4F3007F1231 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +83,24 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		999DE10E1B7E309500FF3912 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				999DE1101B7E30BD00FF3912 /* VKCApi.h */,
+				999DE1111B7E30BD00FF3912 /* VKCApi.m */,
+			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		999DE1131B7E5CFB00FF3912 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				999DE1171B7E5D7600FF3912 /* VKCNSString.h */,
+				999DE1181B7E5D7600FF3912 /* VKCNSString.m */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		999FE6D61B7D1B600045EDB5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +122,10 @@
 		999FE6D81B7D1BF40045EDB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				998249031B7DE99A00131A26 /* VKCUser.h */,
+				998249041B7DE99A00131A26 /* VKCUser.m */,
+				998249061B7DF66A00131A26 /* VKCCity.h */,
+				998249071B7DF66A00131A26 /* VKCCity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +151,8 @@
 		99E53CC91B7CD4F3007F1231 /* VkClient */ = {
 			isa = PBXGroup;
 			children = (
+				999DE1131B7E5CFB00FF3912 /* Extension */,
+				999DE10E1B7E309500FF3912 /* Api */,
 				998249021B7DD85300131A26 /* Controller */,
 				999FE6D81B7D1BF40045EDB5 /* Model */,
 				999FE6D71B7D1BDD0045EDB5 /* View */,
@@ -246,8 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				998249051B7DE99A00131A26 /* VKCUser.m in Sources */,
 				99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */,
+				998249081B7DF66A00131A26 /* VKCCity.m in Sources */,
+				999DE1191B7E5D7600FF3912 /* VKCNSString.m in Sources */,
 				99E53CCD1B7CD4F3007F1231 /* main.m in Sources */,
+				999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */,
 				99E53CD31B7CD4F3007F1231 /* VkClient.xcdatamodeld in Sources */,
 				998249011B7DD82D00131A26 /* ViewController.m in Sources */,
 			);
