@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol Identifying <NSObject>
+@protocol VKCIdentifiable <NSObject>
+
+@property int identifier;
 
 @end

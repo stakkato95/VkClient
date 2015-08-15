@@ -10,10 +10,17 @@
 
 @implementation VKCCity
 
+@synthesize identifier;
+
 + (VKCCity *) newWithName: (NSString *) aName {
     VKCCity *city = [[VKCCity alloc] init];
     city.name = aName;
     return city;
+}
+
+- (void)doAcion {
+    unsigned long long int number = 99999999999;
+    number++;
 }
 
 @end

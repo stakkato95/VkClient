@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 Artsiom Kaliaha. All rights reserved.
 //
 
-#ifndef VkClient_Blocks_h
-#define VkClient_Blocks_h
+#import <Foundation/Foundation.h>
 
-
-#endif
+typedef void (^Callback)();
+typedef BOOL (^PredicateCallback)(id);

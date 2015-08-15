@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VKCIdentifiable.h"
 
-@interface VKCCity : NSObject
+@interface VKCCity : NSObject <VKCIdentifiable>
 
 @property (readwrite) NSString *name;
 
 + (VKCCity *) newWithName: (NSString *) aName;
+
+- (void) doAcion;
 
 @end

@@ -11,7 +11,8 @@
 
 @interface VKCUser()
 
-//EXTENSION!!! place for private methods and properties
+@property (readwrite) Name *property;
+//EXTENSION!!! place for private methods and properties (or readjust property to be INTERNALLY READWRITE)
 
 @end
 
@@ -22,6 +23,8 @@
 
 static NSString *const CONSTANT = @"string";
 
+@synthesize identifier;
+
 + (VKCUser *)userWithFirstName:(NSString *)aFirstName secondName:(NSString *)aSecondName birthDate:(NSDate *)aBirthDate status:(NSString *)aStatus online:(BOOL)aOnline {
     VKCUser *user = [[VKCUser alloc] init];
     user.firstName = aFirstName;
@@ -30,11 +33,28 @@ static NSString *const CONSTANT = @"string";
     user.status = aStatus;
     user.online = aOnline;
     
+    user.property = @"";
+    
     return user;
 }
 
 + (VKCUser *)userWithFirstName:(NSString *)aFirstName secondName:(NSString *)aSecondName {
     return [VKCUser userWithFirstName:aFirstName secondName:aSecondName birthDate:nil status:nil online:NO];
+}
+
+- (void)checkStringRange {
+    NSString *str = @"Hello my big world";
+    NSRange range = [str rangeOfString:@"big"];
+    NSValue *value = [NSValue valueWithRange:range];
+}
+
+//FUN WITH BLOCKS
+- (void)someMethodWithIntParam: (int) one floatParam: (float) two nsNumberParam: (NSNumber *) three block: (void (^)(int, float, NSNumber *)) callbackWithParameters {
+    callbackWithParameters(one, two, three);
+}
+
+- (void)performBlockCallback: (Callback) callback {
+    callback();
 }
 
 @end

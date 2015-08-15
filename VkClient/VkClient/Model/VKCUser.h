@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VKCIdentifiable.h"
+#import "VKCBlocks.h"
 
-@interface VKCUser : NSObject {
+//NEW TYPE CALLED Name
+typedef NSString Name;
+
+@interface VKCUser : NSObject <VKCIdentifiable> {
     //place for instance variables NOT PROPERTIES!!!
 }
 
@@ -18,7 +23,14 @@
 @property NSString *status;
 @property (getter=isOnline) BOOL online; //BOOL without pointer as it's primitive type!!!
 
+@property (readonly) Name *property; //property that is READONLY for outer objects & READWRITE for inner use. See .m file extension!!!!!
+
 + (VKCUser *)userWithFirstName: (NSString *) aFirstName secondName: (NSString *) aSecondName birthDate: (NSDate *) aBirthDate status: (NSString *) aStatus online: (BOOL) aOnline;
 + (VKCUser *)userWithFirstName: (NSString *) aFirstName secondName: (NSString *) aSecondName;
+
+- (void)checkStringRange;
+//FUN WITH BLOCKS
+- (void)someMethodWithIntParam: (int) one floatParam: (float) two nsNumberParam: (NSNumber *) three block: (void (^)(int, float, NSNumber *)) callbackWithParameters;
+- (void)performBlockCallback: (Callback) callback;
 
 @end

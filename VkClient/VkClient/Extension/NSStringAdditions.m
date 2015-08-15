@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Artsiom Kaliaha. All rights reserved.
 //
 
-#import "VKCNSString.h"
+#import "NSStringAdditions.h"
 
-@implementation NSString (VKCNSString)
+@implementation NSString (NSStringAdditions)
 
 NSString * const EMPTY_STRING = @"";
 char const WHITE_SPACE_CHAR = ' ';

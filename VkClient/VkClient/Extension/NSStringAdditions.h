@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (VKCNSString)
+@interface NSString (NSStringAdditions)
 
 extern NSString * const EMPTY_STRING;
 extern char const WHITE_SPACE_CHAR;
