@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9920ABB71B7FC57200A5A5EA /* VKCBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCBlocks.h; path = Common/VKCBlocks.h; sourceTree = "<group>"; };
 		9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCIdentifiable.h; path = Common/VKCIdentifiable.h; sourceTree = "<group>"; };
 		998248FF1B7DD82D00131A26 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
 		998249001B7DD82D00131A26 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		999DE1111B7E30BD00FF3912 /* VKCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCApi.m; path = Api/VKCApi.m; sourceTree = "<group>"; };
 		999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringAdditions.h; path = Extension/NSStringAdditions.h; sourceTree = "<group>"; };
 		999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringAdditions.m; path = Extension/NSStringAdditions.m; sourceTree = "<group>"; };
-		99CE6F731B7FB82500762EA8 /* VKCBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCBlocks.h; sourceTree = "<group>"; };
 		99E53CC71B7CD4F3007F1231 /* VkClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E53CCB1B7CD4F3007F1231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E53CCC1B7CD4F3007F1231 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 		9968C3ED1B7F7424004CF095 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9920ABB71B7FC57200A5A5EA /* VKCBlocks.h */,
 				9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */,
-				99CE6F731B7FB82500762EA8 /* VKCBlocks.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
