@@ -45,8 +45,10 @@
 //    };
     
     Callback callback = ^ void () {
-        
+        __weak ViewController *weakSelf = self;
+        [weakSelf printLogMessage:@"PRINTED WIA WEAK SELF REFERENCE"];
     };
+    callback();
     
     
     __block int externalToBlockNimber = 30;
@@ -75,12 +77,26 @@
         NSLog(@"Callback to log");
     }];
     
+//    ITERATE OVER ARRAY
+    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"given object with index %lu", (unsigned long)idx);
+    }];
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)printLogMessage:(NSString *)message {
+//      REMOVE PRAGMAS & YOU'LL SEE MAGIC!!!
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wformat-security"
+    NSLog(message);
+#pragma clang diagnostic pop
 }
 
 @end

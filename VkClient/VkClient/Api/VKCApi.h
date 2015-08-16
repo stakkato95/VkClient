@@ -10,7 +10,10 @@
 
 @interface VKCApi : NSObject
 
-//example of accessing the constant: NSString *newStr = BASE_PATH;
-extern NSString * const BASE_PATH;
+extern NSString * const METHOD_PATH;
+extern NSString * const OAUTH_PATH;
+
++ (NSURLRequest *)getOAuthPath;
++ (BOOL)checkForToken:(NSURLRequest *)urlRequest;
 
 @end

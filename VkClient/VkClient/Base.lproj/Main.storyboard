@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wHt-2I-NwF">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,6 +20,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1082" y="551"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="MX6-BZ-YcS">
+            <objects>
+                <viewController id="wHt-2I-NwF" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d97-l9-dgi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ks1-rQ-zEM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lsh-l2-03B">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ire-la-5GB">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-Lo-VIA" userLabel="webView" customClass="W">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ire-la-5GB" firstAttribute="centerY" secondItem="cBB-Lo-VIA" secondAttribute="centerY" id="4XM-OO-OjH"/>
+                            <constraint firstItem="cBB-Lo-VIA" firstAttribute="top" secondItem="lsh-l2-03B" secondAttribute="top" id="ZJS-pR-aob"/>
+                            <constraint firstItem="ire-la-5GB" firstAttribute="centerX" secondItem="cBB-Lo-VIA" secondAttribute="centerX" id="bnH-FB-xWJ"/>
+                            <constraint firstAttribute="trailing" secondItem="cBB-Lo-VIA" secondAttribute="trailing" id="dMc-rq-z7a"/>
+                            <constraint firstItem="cBB-Lo-VIA" firstAttribute="leading" secondItem="lsh-l2-03B" secondAttribute="leading" id="f8O-8z-aSc"/>
+                            <constraint firstItem="cBB-Lo-VIA" firstAttribute="bottom" secondItem="Ks1-rQ-zEM" secondAttribute="top" id="gBV-Q9-nrU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ire-la-5GB" id="gNt-gS-0GK"/>
+                        <outlet property="webView" destination="cBB-Lo-VIA" id="tST-rL-H8j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EK3-lh-xtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="410" y="551"/>
         </scene>
     </scenes>
 </document>

@@ -31,6 +31,6 @@ typedef NSString Name;
 - (void)checkStringRange;
 //FUN WITH BLOCKS
 - (void)someMethodWithIntParam: (int) one floatParam: (float) two nsNumberParam: (NSNumber *) three block: (void (^)(int, float, NSNumber *)) callbackWithParameters;
-- (void)performBlockCallback: (Callback) callback;
+- (void)performBlockCallback: (Callback) callbackCCCCCC;
 
 @end

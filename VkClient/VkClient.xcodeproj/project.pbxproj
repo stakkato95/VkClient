@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991A885A1B80862300383566 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A88591B80862300383566 /* WebViewController.m */; };
 		998249011B7DD82D00131A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249001B7DD82D00131A26 /* ViewController.m */; };
 		998249051B7DE99A00131A26 /* VKCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249041B7DE99A00131A26 /* VKCUser.m */; };
 		998249081B7DF66A00131A26 /* VKCCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249071B7DF66A00131A26 /* VKCCity.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		991A88581B80862300383566 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Controller/WebViewController.h; sourceTree = "<group>"; };
+		991A88591B80862300383566 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Controller/WebViewController.m; sourceTree = "<group>"; };
 		9920ABB71B7FC57200A5A5EA /* VKCBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCBlocks.h; path = Common/VKCBlocks.h; sourceTree = "<group>"; };
 		9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCIdentifiable.h; path = Common/VKCIdentifiable.h; sourceTree = "<group>"; };
 		998248FF1B7DD82D00131A26 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 			children = (
 				998248FF1B7DD82D00131A26 /* ViewController.h */,
 				998249001B7DD82D00131A26 /* ViewController.m */,
+				991A88581B80862300383566 /* WebViewController.h */,
+				991A88591B80862300383566 /* WebViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */,
 				998249081B7DF66A00131A26 /* VKCCity.m in Sources */,
 				999DE1191B7E5D7600FF3912 /* NSStringAdditions.m in Sources */,
+				991A885A1B80862300383566 /* WebViewController.m in Sources */,
 				99E53CCD1B7CD4F3007F1231 /* main.m in Sources */,
 				999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */,
 				99E53CD31B7CD4F3007F1231 /* VkClient.xcdatamodeld in Sources */,
