@@ -23,4 +23,9 @@
     number++;
 }
 
+- (BOOL)boolTest:(NSString *)string {
+//    return string ? YES : NO;
+    return string != nil; //better variant!!!
+}
+
 @end

@@ -23,19 +23,25 @@ NSString * const METHOD_PATH = @"https://api.vk.com/method/";
 
 #pragma mark - Methods
 
-+ (NSURLRequest *)getOAuthPath {
-    NSString *requestString = [NSString stringWithFormat:OAUTH_PATH, CLIENT_ID, REDIRECT_URI, SCOPE, API_VERSION];
-    NSLog(requestString);
++ (VKCApi *)sharedApi {
+    static VKCApi *api = nil;
+    static dispatch_once_t isDispatched;
+    dispatch_once(&isDispatched, ^{ api = [[VKCApi alloc] init]; });
+    return api;
+}
+
+- (NSURLRequest *)getOAuthPath {
     NSURL *authUrl = [NSURL URLWithString:[NSString stringWithFormat:OAUTH_PATH, CLIENT_ID, REDIRECT_URI, SCOPE, API_VERSION]];
     return [NSURLRequest requestWithURL:authUrl];
 }
 
-+ (BOOL)checkForToken:(NSURLRequest *)urlRequest {
+- (BOOL)checkForToken:(NSURLRequest *)urlRequest {
     NSString *urlString = urlRequest.URL.absoluteString;
     if ([urlString containsString:ACCES_TOKEN]) {
         NSRange tokenRangeStart = [urlString rangeOfString:@"=" ];
         NSRange tokenRangeEnd = [urlString rangeOfString:@"&" ];
         NSString *token = [urlString substringWithRange:NSMakeRange(tokenRangeStart.location, tokenRangeEnd.location - tokenRangeStart.location + 1)];
+//        TODO SAVE TOKEN!!!
     }
     return NO;
 }

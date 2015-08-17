@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.delegate = self;
-    [self.webView loadRequest:[VKCApi getOAuthPath]];
+    [self sendAuthRequest];
 }
 
 
@@ -27,23 +27,23 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    NSLog(webView.request.URL.absoluteString);
-    self.activityIndicator.hidden = NO;
-    [self.activityIndicator startAnimating];
+    [self showActivityIndicator];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [VKCApi checkForToken: webView.request];
-    NSLog(@"%@", webView.request);
-    
+    [[VKCApi sharedApi] checkForToken: webView.request];
     [self hideActivityIndicator];
     self.webView.hidden = NO;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    //add STRINGS to to alert FROM RESOURCES!!!!!!!
-    //ALERT DIALOG must be here!!!
     [self hideActivityIndicator];
+    alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Something has gone wrong while attempting to authorize you", @"Error title that is shown in login screen")
+                                message:[error localizedDescription]
+                               delegate:self
+                      cancelButtonTitle:nil
+                      otherButtonTitles:NSLocalizedString(@"Retry", @"Button"), nil];
+    [alert show];
 }
 
 
@@ -51,7 +51,10 @@
 
 // Called when a button is clicked. The view will be automatically dismissed after this call returns
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+    if (buttonIndex != [alertView cancelButtonIndex]) {
+        [alert dismissWithClickedButtonIndex:buttonIndex animated:YES];
+        [self sendAuthRequest];
+    }
 }
 
 // Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the cancel button.
@@ -91,6 +94,15 @@
 - (void)hideActivityIndicator {
     [self.activityIndicator stopAnimating];
     self.activityIndicator.hidden = YES;
+}
+
+- (void)showActivityIndicator {\
+    [self.activityIndicator stopAnimating];
+    self.activityIndicator.hidden = NO;
+}
+
+- (void)sendAuthRequest {
+    [self.webView loadRequest:[[VKCApi sharedApi] getOAuthPath]];
 }
 
 @end

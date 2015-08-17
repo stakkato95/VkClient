@@ -12,14 +12,13 @@
 @interface VKCUser()
 
 @property (readwrite) Name *property;
-//EXTENSION!!! place for private methods and properties (or readjust property to be INTERNALLY READWRITE)
+//EXTENSION!!! place for PRIVATE methods and properties (or readjust property to be INTERNALLY READWRITE)
+@property NSString *privateProperty;
 
 @end
 
 
-@implementation VKCUser {
-    //place for instance variables NOT PROPERTIES!!!
-}
+@implementation VKCUser
 
 static NSString *const CONSTANT = @"string";
 
@@ -32,7 +31,7 @@ static NSString *const CONSTANT = @"string";
     user.birthDate = aBirthDate;
     user.status = aStatus;
     user.online = aOnline;
-    
+    user->publicVar = @"5";
     user.property = @"";
     
     return user;

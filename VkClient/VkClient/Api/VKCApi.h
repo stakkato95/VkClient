@@ -13,7 +13,8 @@
 extern NSString * const METHOD_PATH;
 extern NSString * const OAUTH_PATH;
 
-+ (NSURLRequest *)getOAuthPath;
-+ (BOOL)checkForToken:(NSURLRequest *)urlRequest;
++ (VKCApi *)sharedApi;
+- (NSURLRequest *)getOAuthPath;
+- (BOOL)checkForToken:(NSURLRequest *)urlRequest;
 
 @end

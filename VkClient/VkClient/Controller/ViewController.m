@@ -25,6 +25,7 @@
     NSString *str = @"";
     BOOL result = [str vkc_isNilOrEmpty];
     
+    
     //fun with collections
     NSArray *array = @[user, str, [NSNumber numberWithBool:result]];
     NSEnumerator *enumerator = [array objectEnumerator];

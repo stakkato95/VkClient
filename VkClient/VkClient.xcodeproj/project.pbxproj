@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		991A885A1B80862300383566 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A88591B80862300383566 /* WebViewController.m */; };
+		991E0E761B8255F40047CC89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991E0E751B8255F40047CC89 /* Localizable.strings */; };
 		998249011B7DD82D00131A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249001B7DD82D00131A26 /* ViewController.m */; };
 		998249051B7DE99A00131A26 /* VKCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249041B7DE99A00131A26 /* VKCUser.m */; };
 		998249081B7DF66A00131A26 /* VKCCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249071B7DF66A00131A26 /* VKCCity.m */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		991A88581B80862300383566 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Controller/WebViewController.h; sourceTree = "<group>"; };
 		991A88591B80862300383566 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Controller/WebViewController.m; sourceTree = "<group>"; };
+		991E0E751B8255F40047CC89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resource/Localizable.strings; sourceTree = "<group>"; };
 		9920ABB71B7FC57200A5A5EA /* VKCBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCBlocks.h; path = Common/VKCBlocks.h; sourceTree = "<group>"; };
 		9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCIdentifiable.h; path = Common/VKCIdentifiable.h; sourceTree = "<group>"; };
 		998248FF1B7DD82D00131A26 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
@@ -45,8 +47,8 @@
 		998249071B7DF66A00131A26 /* VKCCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCCity.m; sourceTree = "<group>"; };
 		999DE1101B7E30BD00FF3912 /* VKCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCApi.h; path = Api/VKCApi.h; sourceTree = "<group>"; };
 		999DE1111B7E30BD00FF3912 /* VKCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCApi.m; path = Api/VKCApi.m; sourceTree = "<group>"; };
-		999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringAdditions.h; path = Extension/NSStringAdditions.h; sourceTree = "<group>"; };
-		999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringAdditions.m; path = Extension/NSStringAdditions.m; sourceTree = "<group>"; };
+		999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
 		99E53CC71B7CD4F3007F1231 /* VkClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E53CCB1B7CD4F3007F1231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E53CCC1B7CD4F3007F1231 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		99E53CCF1B7CD4F3007F1231 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		99E53CD21B7CD4F3007F1231 /* VkClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VkClient.xcdatamodel; sourceTree = "<group>"; };
 		99E53CD81B7CD4F3007F1231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		99E53CDA1B7CD4F3007F1231 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		99E53CDA1B7CD4F3007F1231 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resource/Images.xcassets; sourceTree = "<group>"; };
 		99E53CDD1B7CD4F3007F1231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		99E53CE31B7CD4F3007F1231 /* VkClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VkClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E53CE81B7CD4F3007F1231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +81,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		991E0E711B8224680047CC89 /* Recource */ = {
+			isa = PBXGroup;
+			children = (
+				991E0E751B8255F40047CC89 /* Localizable.strings */,
+				99E53CD71B7CD4F3007F1231 /* Main.storyboard */,
+				99E53CDA1B7CD4F3007F1231 /* Images.xcassets */,
+				99E53CDC1B7CD4F3007F1231 /* LaunchScreen.xib */,
+				99E53CD11B7CD4F3007F1231 /* VkClient.xcdatamodeld */,
+			);
+			name = Recource;
+			sourceTree = "<group>";
+		};
 		9968C3ED1B7F7424004CF095 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,13 +122,13 @@
 			name = Api;
 			sourceTree = "<group>";
 		};
-		999DE1131B7E5CFB00FF3912 /* Extension */ = {
+		999DE1131B7E5CFB00FF3912 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */,
 				999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */,
 			);
-			name = Extension;
+			path = Category;
 			sourceTree = "<group>";
 		};
 		999FE6D61B7D1B600045EDB5 /* Application */ = {
@@ -167,17 +181,14 @@
 		99E53CC91B7CD4F3007F1231 /* VkClient */ = {
 			isa = PBXGroup;
 			children = (
+				991E0E711B8224680047CC89 /* Recource */,
 				9968C3ED1B7F7424004CF095 /* Common */,
-				999DE1131B7E5CFB00FF3912 /* Extension */,
+				999DE1131B7E5CFB00FF3912 /* Category */,
 				999DE10E1B7E309500FF3912 /* Api */,
 				998249021B7DD85300131A26 /* Controller */,
 				999FE6D81B7D1BF40045EDB5 /* Model */,
 				999FE6D71B7D1BDD0045EDB5 /* View */,
 				999FE6D61B7D1B600045EDB5 /* Application */,
-				99E53CD71B7CD4F3007F1231 /* Main.storyboard */,
-				99E53CDA1B7CD4F3007F1231 /* Images.xcassets */,
-				99E53CDC1B7CD4F3007F1231 /* LaunchScreen.xib */,
-				99E53CD11B7CD4F3007F1231 /* VkClient.xcdatamodeld */,
 			);
 			path = VkClient;
 			sourceTree = "<group>";
@@ -280,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99E53CD91B7CD4F3007F1231 /* Main.storyboard in Resources */,
+				991E0E761B8255F40047CC89 /* Localizable.strings in Resources */,
 				99E53CDE1B7CD4F3007F1231 /* LaunchScreen.xib in Resources */,
 				99E53CDB1B7CD4F3007F1231 /* Images.xcassets in Resources */,
 			);
@@ -336,6 +348,7 @@
 				99E53CD81B7CD4F3007F1231 /* Base */,
 			);
 			name = Main.storyboard;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		99E53CDC1B7CD4F3007F1231 /* LaunchScreen.xib */ = {
@@ -344,6 +357,7 @@
 				99E53CDD1B7CD4F3007F1231 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

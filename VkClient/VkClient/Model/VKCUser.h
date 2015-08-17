@@ -14,6 +14,8 @@
 typedef NSString Name;
 
 @interface VKCUser : NSObject <VKCIdentifiable> {
+@protected
+    NSString *publicVar;
     //place for instance variables NOT PROPERTIES!!!
 }
 

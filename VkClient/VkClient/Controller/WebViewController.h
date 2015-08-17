@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate>
+@interface WebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
+    
+    UIAlertView *alert;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
