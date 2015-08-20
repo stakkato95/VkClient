@@ -11,9 +11,13 @@
 
 @implementation WebViewController
 
-#pragma mark - WebViewController
+#pragma mark - WebViewController`
 
 - (void)viewDidLoad {
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSLog(@"DOCUMENTS -> %@", [path firstObject]);
+    
+    
     [super viewDidLoad];
     self.webView.delegate = self;
     [self sendAuthRequest];
@@ -23,6 +27,7 @@
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    [[VKCApi sharedInstance] checkForToken: request];
     return YES;
 }
 
@@ -31,9 +36,10 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [[VKCApi sharedApi] checkForToken: webView.request];
     [self hideActivityIndicator];
-    self.webView.hidden = NO;
+    if (self.webView.hidden) {
+        self.webView.hidden = NO;
+    }
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -92,17 +98,19 @@
 #pragma mark - Help methods
 
 - (void)hideActivityIndicator {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self.activityIndicator stopAnimating];
     self.activityIndicator.hidden = YES;
 }
 
-- (void)showActivityIndicator {\
-    [self.activityIndicator stopAnimating];
+- (void)showActivityIndicator {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
 }
 
 - (void)sendAuthRequest {
-    [self.webView loadRequest:[[VKCApi sharedApi] getOAuthPath]];
+    [self.webView loadRequest:[[VKCApi sharedInstance] getOAuthRequest]];
 }
 
 @end

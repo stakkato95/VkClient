@@ -30,4 +30,10 @@ char const WHITE_SPACE_CHAR = ' ';
     return YES;
 }
 
++ (void)vkc_trimString:(NSString *) string betweenString:(NSString*)start andString:(NSString*)end {
+    NSRange tokenRangeStart = [string rangeOfString:start];
+    NSRange tokenRangeEnd = [string rangeOfString:end];
+    string = [string substringWithRange:NSMakeRange(tokenRangeStart.location + 1, tokenRangeEnd.location - tokenRangeStart.location -1)];
+}
+
 @end

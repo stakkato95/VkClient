@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990180041B8619CF0083A923 /* VKCTokenStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 990180031B8619CF0083A923 /* VKCTokenStorage.m */; };
 		991A885A1B80862300383566 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A88591B80862300383566 /* WebViewController.m */; };
 		991E0E761B8255F40047CC89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991E0E751B8255F40047CC89 /* Localizable.strings */; };
 		998249011B7DD82D00131A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249001B7DD82D00131A26 /* ViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		990180021B8619CF0083A923 /* VKCTokenStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCTokenStorage.h; path = Api/VKCTokenStorage.h; sourceTree = "<group>"; };
+		990180031B8619CF0083A923 /* VKCTokenStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCTokenStorage.m; path = Api/VKCTokenStorage.m; sourceTree = "<group>"; };
 		991A88581B80862300383566 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Controller/WebViewController.h; sourceTree = "<group>"; };
 		991A88591B80862300383566 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Controller/WebViewController.m; sourceTree = "<group>"; };
 		991E0E751B8255F40047CC89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resource/Localizable.strings; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 			children = (
 				999DE1101B7E30BD00FF3912 /* VKCApi.h */,
 				999DE1111B7E30BD00FF3912 /* VKCApi.m */,
+				990180021B8619CF0083A923 /* VKCTokenStorage.h */,
+				990180031B8619CF0083A923 /* VKCTokenStorage.m */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				990180041B8619CF0083A923 /* VKCTokenStorage.m in Sources */,
 				998249051B7DE99A00131A26 /* VKCUser.m in Sources */,
 				99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */,
 				998249081B7DF66A00131A26 /* VKCCity.m in Sources */,
@@ -449,9 +455,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
 				INFOPLIST_FILE = VkClient/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
 		};
@@ -459,9 +467,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_STATIC_ANALYZER_MODE = deep;
 				INFOPLIST_FILE = VkClient/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
 		};

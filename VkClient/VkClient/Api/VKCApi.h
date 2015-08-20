@@ -10,11 +10,12 @@
 
 @interface VKCApi : NSObject
 
+extern NSString * const VK_COM;
 extern NSString * const METHOD_PATH;
 extern NSString * const OAUTH_PATH;
 
-+ (VKCApi *)sharedApi;
-- (NSURLRequest *)getOAuthPath;
++ (VKCApi *)sharedInstance;
+- (NSURLRequest *)getOAuthRequest;
 - (BOOL)checkForToken:(NSURLRequest *)urlRequest;
 
 @end

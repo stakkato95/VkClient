@@ -24,6 +24,12 @@
 }
 
 - (BOOL)boolTest:(NSString *)string {
+#warning unsafe place!!!
+//# error FIX IT OR CODE WON'T COMPILE!
+//    TODO: nee to be fixed!!!
+//    FIXME: awful mus ne here
+//    ???: WTF
+//    !!!: LOOK HERE MAN=)
 //    return string ? YES : NO;
     return string != nil; //better variant!!!
 }

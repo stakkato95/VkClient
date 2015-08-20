@@ -13,8 +13,8 @@
 extern NSString * const EMPTY_STRING;
 extern char const WHITE_SPACE_CHAR;
 
-//NEED PREFIX vkc_ TO AVOID CODE CLASHES
 - (BOOL)vkc_isNilOrEmpty;
 - (BOOL)vkc_isNilOrWhiteSpace;
++ (void)vkc_trimString:(NSString *) string betweenString:(NSString*)start andString:(NSString*)end;
 
 @end
