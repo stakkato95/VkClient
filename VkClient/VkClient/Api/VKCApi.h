@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VKCApi : NSObject
+@interface VKCApi : NSObject {
+    @private
+    NSString *token;
+}
 
 extern NSString * const VK_COM;
 extern NSString * const METHOD_PATH;
@@ -17,5 +20,6 @@ extern NSString * const OAUTH_PATH;
 + (VKCApi *)sharedInstance;
 - (NSURLRequest *)getOAuthRequest;
 - (BOOL)checkForToken:(NSURLRequest *)urlRequest;
+- (void)setToken: (NSString *)tokenString;
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wHt-2I-NwF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AWy-c8-ELa">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -20,7 +20,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="551"/>
+            <point key="canvasLocation" x="1776" y="549"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="xeW-FA-ce1">
+            <objects>
+                <navigationController id="AWy-c8-ELa" customClass="VKCMainNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SBD-0u-jsl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wHt-2I-NwF" kind="relationship" relationship="rootViewController" id="4Rp-xI-EZZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0s-oM-N12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="416" y="549"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="MX6-BZ-YcS">
@@ -52,6 +68,7 @@
                             <constraint firstItem="cBB-Lo-VIA" firstAttribute="bottom" secondItem="Ks1-rQ-zEM" secondAttribute="top" id="gBV-Q9-nrU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kdz-At-mdk"/>
                     <connections>
                         <outlet property="activityIndicator" destination="ire-la-5GB" id="gNt-gS-0GK"/>
                         <outlet property="webView" destination="cBB-Lo-VIA" id="tST-rL-H8j"/>
@@ -59,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EK3-lh-xtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410" y="551"/>
+            <point key="canvasLocation" x="1104" y="549"/>
         </scene>
     </scenes>
 </document>

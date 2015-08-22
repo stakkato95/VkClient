@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VKCTokenStorage : NSObject
+@interface VKCTokenStorage : NSObject {
+    @private
+    NSDictionary *attributesQuery;
+}
 
 + (VKCTokenStorage *)sharedInstance;
-- (void)retain:(NSString *) tokenString;
+- (void)retain:(NSString *)tokenString;
 - (NSString *)obtain;
 
 @end

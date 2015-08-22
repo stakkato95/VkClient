@@ -30,10 +30,10 @@ char const WHITE_SPACE_CHAR = ' ';
     return YES;
 }
 
-+ (void)vkc_trimString:(NSString *) string betweenString:(NSString*)start andString:(NSString*)end {
-    NSRange tokenRangeStart = [string rangeOfString:start];
-    NSRange tokenRangeEnd = [string rangeOfString:end];
-    string = [string substringWithRange:NSMakeRange(tokenRangeStart.location + 1, tokenRangeEnd.location - tokenRangeStart.location -1)];
+- (NSString *)vkc_trimStringBetween:(NSString *)start and:(NSString *)end {
+    NSRange tokenRangeStart = [self rangeOfString:start];
+    NSRange tokenRangeEnd = [self rangeOfString:end];
+    return [self substringWithRange:NSMakeRange(tokenRangeStart.location + 1, tokenRangeEnd.location - tokenRangeStart.location -1)];
 }
 
 @end

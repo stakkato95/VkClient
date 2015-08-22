@@ -41,11 +41,13 @@ NSString * const METHOD_PATH = @"https://api.vk.com/method/";
     NSString *urlString = request.URL.absoluteString;
     if ([urlString containsString:ACCESS_TOKEN]) {
         [[VKCTokenStorage sharedInstance] retain:urlString];
-        //        TODO: ADD METHOD TO STRING CATEGORY LIKE stringBetweenString:(NSString*)start andString:(NSString*)end
-        
-//        TODO: SAVE TOKEN!!!
+        return YES;
     }
     return NO;
+}
+
+- (void)setToken: (NSString *)tokenString {
+    self->token = token;
 }
 
 @end

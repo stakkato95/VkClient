@@ -14,10 +14,6 @@
 #pragma mark - WebViewController`
 
 - (void)viewDidLoad {
-    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSLog(@"DOCUMENTS -> %@", [path firstObject]);
-    
-    
     [super viewDidLoad];
     self.webView.delegate = self;
     [self sendAuthRequest];
@@ -27,8 +23,7 @@
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    [[VKCApi sharedInstance] checkForToken: request];
-    return YES;
+    return ![[VKCApi sharedInstance] checkForToken: request];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {

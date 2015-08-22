@@ -13,6 +13,7 @@
 		998249011B7DD82D00131A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249001B7DD82D00131A26 /* ViewController.m */; };
 		998249051B7DE99A00131A26 /* VKCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249041B7DE99A00131A26 /* VKCUser.m */; };
 		998249081B7DF66A00131A26 /* VKCCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249071B7DF66A00131A26 /* VKCCity.m */; };
+		998B1E3E1B87934600A088B3 /* VKCMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998B1E3D1B87934600A088B3 /* VKCMainNavigationController.m */; };
 		999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1111B7E30BD00FF3912 /* VKCApi.m */; };
 		999DE1191B7E5D7600FF3912 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */; };
 		99E53CCD1B7CD4F3007F1231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CCC1B7CD4F3007F1231 /* main.m */; };
@@ -48,6 +49,8 @@
 		998249041B7DE99A00131A26 /* VKCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCUser.m; sourceTree = "<group>"; };
 		998249061B7DF66A00131A26 /* VKCCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCCity.h; sourceTree = "<group>"; };
 		998249071B7DF66A00131A26 /* VKCCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCCity.m; sourceTree = "<group>"; };
+		998B1E3C1B87934600A088B3 /* VKCMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCMainNavigationController.h; path = Controller/VKCMainNavigationController.h; sourceTree = "<group>"; };
+		998B1E3D1B87934600A088B3 /* VKCMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCMainNavigationController.m; path = Controller/VKCMainNavigationController.m; sourceTree = "<group>"; };
 		999DE1101B7E30BD00FF3912 /* VKCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCApi.h; path = Api/VKCApi.h; sourceTree = "<group>"; };
 		999DE1111B7E30BD00FF3912 /* VKCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCApi.m; path = Api/VKCApi.m; sourceTree = "<group>"; };
 		999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				998249001B7DD82D00131A26 /* ViewController.m */,
 				991A88581B80862300383566 /* WebViewController.h */,
 				991A88591B80862300383566 /* WebViewController.m */,
+				998B1E3C1B87934600A088B3 /* VKCMainNavigationController.h */,
+				998B1E3D1B87934600A088B3 /* VKCMainNavigationController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				991A885A1B80862300383566 /* WebViewController.m in Sources */,
 				99E53CCD1B7CD4F3007F1231 /* main.m in Sources */,
 				999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */,
+				998B1E3E1B87934600A088B3 /* VKCMainNavigationController.m in Sources */,
 				99E53CD31B7CD4F3007F1231 /* VkClient.xcdatamodeld in Sources */,
 				998249011B7DD82D00131A26 /* ViewController.m in Sources */,
 			);

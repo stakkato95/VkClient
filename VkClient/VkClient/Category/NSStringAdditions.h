@@ -15,6 +15,6 @@ extern char const WHITE_SPACE_CHAR;
 
 - (BOOL)vkc_isNilOrEmpty;
 - (BOOL)vkc_isNilOrWhiteSpace;
-+ (void)vkc_trimString:(NSString *) string betweenString:(NSString*)start andString:(NSString*)end;
+- (NSString *)vkc_trimStringBetween:(NSString *)start and:(NSString *)end;
 
 @end
