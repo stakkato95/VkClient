@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
+@interface VKCWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
     
     UIAlertView *alert;
     

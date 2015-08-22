@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Artsiom Kaliaha. All rights reserved.
 //
 
-#import "WebViewController.h"
+#import <UIKit/UIKit.h>
+#import "VKCWebViewController.h"
 #import "VKCApi.h"
+#import "VKCWebKitMissingBase.h"
 
-@implementation WebViewController
+@implementation VKCWebViewController
 
 #pragma mark - WebViewController`
 
@@ -17,13 +19,18 @@
     [super viewDidLoad];
     self.webView.delegate = self;
     [self sendAuthRequest];
+    
 }
 
 
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    return ![[VKCApi sharedInstance] checkForToken: request];
+    if ([[VKCApi sharedInstance] checkForToken: request]) {
+        [self performSegueWithIdentifier:@"showFriendsView" sender:self];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
@@ -39,12 +46,14 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [self hideActivityIndicator];
-    alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Something has gone wrong while attempting to authorize you", @"Error title that is shown in login screen")
-                                message:[error localizedDescription]
-                               delegate:self
-                      cancelButtonTitle:nil
-                      otherButtonTitles:NSLocalizedString(@"Retry", @"Button"), nil];
-    [alert show];
+    if (error.code != WebKitErrorFrameLoadInterruptedByPolicyChange) {
+        alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Something has gone wrong while attempting to authorize you", @"Error title that is shown in login screen")
+                                           message:[error localizedDescription]
+                                          delegate:self
+                                 cancelButtonTitle:nil
+                                 otherButtonTitles:NSLocalizedString(@"Retry", @"Button"), nil];
+        [alert show];
+    }
 }
 
 

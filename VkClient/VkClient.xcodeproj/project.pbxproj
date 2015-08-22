@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		990180041B8619CF0083A923 /* VKCTokenStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 990180031B8619CF0083A923 /* VKCTokenStorage.m */; };
-		991A885A1B80862300383566 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A88591B80862300383566 /* WebViewController.m */; };
+		991A885A1B80862300383566 /* VKCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A88591B80862300383566 /* VKCWebViewController.m */; };
 		991E0E761B8255F40047CC89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991E0E751B8255F40047CC89 /* Localizable.strings */; };
+		996966651B88EAD80092BCEA /* VKCFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996966641B88EAD80092BCEA /* VKCFriendsTableViewController.m */; };
 		998249011B7DD82D00131A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249001B7DD82D00131A26 /* ViewController.m */; };
 		998249051B7DE99A00131A26 /* VKCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249041B7DE99A00131A26 /* VKCUser.m */; };
 		998249081B7DF66A00131A26 /* VKCCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249071B7DF66A00131A26 /* VKCCity.m */; };
@@ -38,11 +39,14 @@
 /* Begin PBXFileReference section */
 		990180021B8619CF0083A923 /* VKCTokenStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCTokenStorage.h; path = Api/VKCTokenStorage.h; sourceTree = "<group>"; };
 		990180031B8619CF0083A923 /* VKCTokenStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCTokenStorage.m; path = Api/VKCTokenStorage.m; sourceTree = "<group>"; };
-		991A88581B80862300383566 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Controller/WebViewController.h; sourceTree = "<group>"; };
-		991A88591B80862300383566 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Controller/WebViewController.m; sourceTree = "<group>"; };
+		991A88581B80862300383566 /* VKCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCWebViewController.h; path = Controller/VKCWebViewController.h; sourceTree = "<group>"; };
+		991A88591B80862300383566 /* VKCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCWebViewController.m; path = Controller/VKCWebViewController.m; sourceTree = "<group>"; };
 		991E0E751B8255F40047CC89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resource/Localizable.strings; sourceTree = "<group>"; };
 		9920ABB71B7FC57200A5A5EA /* VKCBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCBlocks.h; path = Common/VKCBlocks.h; sourceTree = "<group>"; };
 		9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCIdentifiable.h; path = Common/VKCIdentifiable.h; sourceTree = "<group>"; };
+		996966631B88EAD80092BCEA /* VKCFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCFriendsTableViewController.h; path = Controller/VKCFriendsTableViewController.h; sourceTree = "<group>"; };
+		996966641B88EAD80092BCEA /* VKCFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCFriendsTableViewController.m; path = Controller/VKCFriendsTableViewController.m; sourceTree = "<group>"; };
+		996966691B88FABB0092BCEA /* VKCWebKitMissingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCWebKitMissingBase.h; path = Common/VKCWebKitMissingBase.h; sourceTree = "<group>"; };
 		998248FF1B7DD82D00131A26 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
 		998249001B7DD82D00131A26 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
 		998249031B7DE99A00131A26 /* VKCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCUser.h; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			children = (
 				9920ABB71B7FC57200A5A5EA /* VKCBlocks.h */,
 				9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */,
+				996966691B88FABB0092BCEA /* VKCWebKitMissingBase.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -113,10 +118,12 @@
 			children = (
 				998248FF1B7DD82D00131A26 /* ViewController.h */,
 				998249001B7DD82D00131A26 /* ViewController.m */,
-				991A88581B80862300383566 /* WebViewController.h */,
-				991A88591B80862300383566 /* WebViewController.m */,
+				991A88581B80862300383566 /* VKCWebViewController.h */,
+				991A88591B80862300383566 /* VKCWebViewController.m */,
 				998B1E3C1B87934600A088B3 /* VKCMainNavigationController.h */,
 				998B1E3D1B87934600A088B3 /* VKCMainNavigationController.m */,
+				996966631B88EAD80092BCEA /* VKCFriendsTableViewController.h */,
+				996966641B88EAD80092BCEA /* VKCFriendsTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -326,9 +333,10 @@
 				99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */,
 				998249081B7DF66A00131A26 /* VKCCity.m in Sources */,
 				999DE1191B7E5D7600FF3912 /* NSStringAdditions.m in Sources */,
-				991A885A1B80862300383566 /* WebViewController.m in Sources */,
+				991A885A1B80862300383566 /* VKCWebViewController.m in Sources */,
 				99E53CCD1B7CD4F3007F1231 /* main.m in Sources */,
 				999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */,
+				996966651B88EAD80092BCEA /* VKCFriendsTableViewController.m in Sources */,
 				998B1E3E1B87934600A088B3 /* VKCMainNavigationController.m in Sources */,
 				99E53CD31B7CD4F3007F1231 /* VkClient.xcdatamodeld in Sources */,
 				998249011B7DD82D00131A26 /* ViewController.m in Sources */,
