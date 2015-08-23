@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VKCSingleton.h"
 
-@interface VKCApi : NSObject {
+@interface VKCApi : NSObject <VKCSingleton> {
     @private
     NSString *token;
 }
 
 extern NSString * const VK_COM;
-extern NSString * const METHOD_PATH;
 extern NSString * const OAUTH_PATH;
+extern NSString * const EXPIRES_IN;
 
 + (VKCApi *)sharedInstance;
 - (NSURLRequest *)getOAuthRequest;

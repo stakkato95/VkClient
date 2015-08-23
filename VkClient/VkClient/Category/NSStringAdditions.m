@@ -31,9 +31,11 @@ char const WHITE_SPACE_CHAR = ' ';
 }
 
 - (NSString *)vkc_trimStringBetween:(NSString *)start and:(NSString *)end {
-    NSRange tokenRangeStart = [self rangeOfString:start];
-    NSRange tokenRangeEnd = [self rangeOfString:end];
-    return [self substringWithRange:NSMakeRange(tokenRangeStart.location + 1, tokenRangeEnd.location - tokenRangeStart.location -1)];
+    NSRange startRange = [self rangeOfString:start];
+    int secondRangeStart = startRange.location + startRange.length;
+    NSRange secondSubstringRange = NSMakeRange(secondRangeStart, self.length - secondRangeStart);
+    NSRange endRange = [self rangeOfString:end options:kNilOptions range:secondSubstringRange];
+    return [self substringWithRange:NSMakeRange(startRange.location + start.length, endRange.location - startRange.location - start.length)];
 }
 
 @end

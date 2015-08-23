@@ -10,6 +10,7 @@
 #import "VKCWebViewController.h"
 #import "VKCApi.h"
 #import "VKCWebKitMissingBase.h"
+#import "VKCTokenStorage.h"
 
 @implementation VKCWebViewController
 
@@ -17,9 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *token = [[VKCTokenStorage sharedInstance] obtainToken];
+    if (token) {
+        [[VKCApi sharedInstance] setToken:token];
+        [self performSegue];
+        return;
+    }
+    
+    
     self.webView.delegate = self;
     [self sendAuthRequest];
-    
 }
 
 
@@ -27,7 +35,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     if ([[VKCApi sharedInstance] checkForToken: request]) {
-        [self performSegueWithIdentifier:@"showFriendsView" sender:self];
+        [self performSegue];
         return NO;
     }
     return YES;
@@ -67,37 +75,6 @@
     }
 }
 
-// Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the cancel button.
-// If not defined in the delegate, we simulate a click in the cancel button
-- (void)alertViewCancel:(UIAlertView *)alertView {
-    
-}
-
-// before animation and showing view
-- (void)willPresentAlertView:(UIAlertView *)alertView {
-    
-}
-
-// after animation
-- (void)didPresentAlertView:(UIAlertView *)alertView {
-    
-}
-
-// before animation and hiding view
-- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
-    
-}
-
-// after animation
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    
-}
-
-// Called after edits in any of the default fields added by the style
-- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView {
-    return YES;
-}
-
 
 #pragma mark - Help methods
 
@@ -115,6 +92,10 @@
 
 - (void)sendAuthRequest {
     [self.webView loadRequest:[[VKCApi sharedInstance] getOAuthRequest]];
+}
+
+- (void)performSegue {
+    [self performSegueWithIdentifier:@"showFriendsView" sender:self];
 }
 
 @end

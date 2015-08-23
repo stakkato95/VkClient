@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "VKCUser.h"
+#import "VKCPolygon.h"
 #import "NSStringAdditions.h"
 #import "VKCBlocks.h"
 
@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //fun with classes
-    VKCUser *user = [VKCUser userWithFirstName:@"Artsiom" secondName:@"Kaliaha"];
+    VKCPolygon *user = [VKCPolygon userWithFirstName:@"Artsiom" secondName:@"Kaliaha"];
     [user checkStringRange];
     NSString *str = @"";
     BOOL result = [str vkc_isNilOrEmpty];

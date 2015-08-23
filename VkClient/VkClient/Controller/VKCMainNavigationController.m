@@ -17,8 +17,6 @@
 @implementation VKCMainNavigationController
 
 - (void)viewDidLoad {
-    NSString *token = [[VKCTokenStorage sharedInstance] obtain];
-    [[VKCApi sharedInstance] setToken:token];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

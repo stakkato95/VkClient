@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VKCSingleton.h"
 
-@interface VKCTokenStorage : NSObject {
+@interface VKCTokenStorage : NSObject <VKCSingleton> {
     @private
     NSDictionary *attributesQuery;
 }
 
 + (VKCTokenStorage *)sharedInstance;
-- (void)retain:(NSString *)tokenString;
-- (NSString *)obtain;
+- (void)retainToken:(NSString *)tokenString;
+- (NSString *)obtainToken;
 
 @end
