@@ -12,20 +12,21 @@
 
 #pragma mark - Constants
 
-static NSString * const RESPONSE = @"response";
-static NSString * const ITEMS = @"items";
+NSString * const RESPONSE = @"response";
+NSString * const ITEMS = @"items";
 
 
 #pragma mark - Initializers
 
-- (VKCJSONWrapper *)initObjectWithJSON:(NSDictionary *)parsedJson {
++ (id)objectWithJSON:(NSDictionary *)parsedJson {
+    VKCJSONWrapper *wrapper = [[VKCJSONWrapper alloc] init];
     if (parsedJson) {
-        json = parsedJson;
+        wrapper->json = parsedJson;
     }
-    return self;
+    return wrapper;
 }
 
-- (VKCJSONWrapper *)initArrayWithJSON:(NSData *)jsonData {
++ (VKCJSONWrapper *)arrayWithJSON:(NSDictionary *)jsonData {
 //    method should be overriden in particular class
     return nil;
 }
@@ -41,9 +42,9 @@ static NSString * const ITEMS = @"items";
     return (int)[self->json objectForKey:key];
 }
 
-//- (float)getFloat:(NSString *)key {
-//    return (float)[self->json objectForKey:key];
-//}
+- (float)getFloat:(NSString *)key {
+    return [(NSNumber *)[self->json objectForKey:key] floatValue];
+}
 
 - (BOOL)getBool:(NSString *)key {
     return (BOOL)[self->json objectForKey:key];

@@ -18,13 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     NSString *token = [[VKCTokenStorage sharedInstance] obtainToken];
     if (token) {
         [[VKCApi sharedInstance] setToken:token];
         [self performSegue];
         return;
     }
-    
     
     self.webView.delegate = self;
     [self sendAuthRequest];

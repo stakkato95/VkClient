@@ -69,7 +69,12 @@ NSString * const FIELDS = @"fields";
 }
 
 - (void)setToken: (NSString *)tokenString {
-    self->token = token;
+    self->token = tokenString;
+}
+
+
+- (void)getFriends {
+    
 }
 
 @end

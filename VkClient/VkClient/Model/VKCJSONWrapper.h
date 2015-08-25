@@ -14,10 +14,16 @@
     
 }
 
+#pragma mark - Constants
+
+extern NSString * const RESPONSE;
+extern NSString * const ITEMS;
+
+
 #pragma mark - Initializers
 
-- (VKCJSONWrapper *)initObjectWithJSON:(NSDictionary *)parsedJson;
-- (VKCJSONWrapper *)initArrayWithJSON:(NSData *)jsonData;
++ (id)objectWithJSON:(NSDictionary *)parsedJson;
++ (NSMutableArray *)arrayWithJSON:(NSDictionary *)jsonData;
 
 
 #pragma mark - Accesors

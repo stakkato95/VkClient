@@ -7,7 +7,7 @@
 //
 
 #import "VKCFriendsProcessor.h"
-#import "VKCPolygon.h"
+#import "VKCUser.h"
 
 @implementation VKCFriendsProcessor
 
@@ -19,19 +19,21 @@
 }
 
 - (id)process:(NSData *)jsonData {
+    NSArray *friendsArray = nil;
+    
     if (jsonData) {
         NSError *error;
         NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
         
-//        if (error == noErr) {
-//            NSArray *friendsArray = []
-//        }
+        if (error == noErr) {
+            friendsArray = [VKCUser arrayWithJSON:responseJson];
+        }
     }
-    return nil;
+    return friendsArray;
 }
 
 - (NSString *)getName {
-    return nil;
+    return NSStringFromClass(self.class);
 }
 
 @end

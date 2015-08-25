@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VKCSingleton.h"
+#import "VKCCallback.h"
 
 @interface VKCApi : NSObject <VKCSingleton> {
     @private
@@ -22,5 +23,7 @@ extern NSString * const EXPIRES_IN;
 - (NSURLRequest *)getOAuthRequest;
 - (BOOL)checkForToken:(NSURLRequest *)urlRequest;
 - (void)setToken: (NSString *)tokenString;
+
+- (void)getFriends:(id<VKCCallback>)callback;
 
 @end

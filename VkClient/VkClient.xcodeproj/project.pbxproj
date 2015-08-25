@@ -10,6 +10,7 @@
 		990180041B8619CF0083A923 /* VKCTokenStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 990180031B8619CF0083A923 /* VKCTokenStorage.m */; };
 		991A885A1B80862300383566 /* VKCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A88591B80862300383566 /* VKCWebViewController.m */; };
 		991E0E761B8255F40047CC89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991E0E751B8255F40047CC89 /* Localizable.strings */; };
+		99572BE51B8C4A7800245156 /* VKCAsyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 99572BE41B8C4A7800245156 /* VKCAsyncTask.m */; };
 		996966651B88EAD80092BCEA /* VKCFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996966641B88EAD80092BCEA /* VKCFriendsTableViewController.m */; };
 		998249011B7DD82D00131A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249001B7DD82D00131A26 /* ViewController.m */; };
 		998249051B7DE99A00131A26 /* VKCPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249041B7DE99A00131A26 /* VKCPolygon.m */; };
@@ -47,6 +48,9 @@
 		991A88591B80862300383566 /* VKCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCWebViewController.m; path = Controller/VKCWebViewController.m; sourceTree = "<group>"; };
 		991E0E751B8255F40047CC89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resource/Localizable.strings; sourceTree = "<group>"; };
 		9920ABB71B7FC57200A5A5EA /* VKCBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCBlocks.h; path = Common/VKCBlocks.h; sourceTree = "<group>"; };
+		99572BE31B8C4A7800245156 /* VKCAsyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCAsyncTask.h; path = Common/Data/VKCAsyncTask.h; sourceTree = "<group>"; };
+		99572BE41B8C4A7800245156 /* VKCAsyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCAsyncTask.m; path = Common/Data/VKCAsyncTask.m; sourceTree = "<group>"; };
+		99572BE91B8C4BD700245156 /* VKCCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCCallback.h; path = Common/Data/VKCCallback.h; sourceTree = "<group>"; };
 		9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCIdentifiable.h; path = Common/VKCIdentifiable.h; sourceTree = "<group>"; };
 		996966631B88EAD80092BCEA /* VKCFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCFriendsTableViewController.h; path = Controller/VKCFriendsTableViewController.h; sourceTree = "<group>"; };
 		996966641B88EAD80092BCEA /* VKCFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCFriendsTableViewController.m; path = Controller/VKCFriendsTableViewController.m; sourceTree = "<group>"; };
@@ -266,6 +270,9 @@
 				99F873A21B89B4ED00BCD1A1 /* VKCDataSource.h */,
 				99F873A61B89B61900BCD1A1 /* VKCProcessor.h */,
 				99F873A31B89B50700BCD1A1 /* VKCPlugin.h */,
+				99572BE31B8C4A7800245156 /* VKCAsyncTask.h */,
+				99572BE41B8C4A7800245156 /* VKCAsyncTask.m */,
+				99572BE91B8C4BD700245156 /* VKCCallback.h */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -383,6 +390,7 @@
 				990180041B8619CF0083A923 /* VKCTokenStorage.m in Sources */,
 				99F873A91B89B6EB00BCD1A1 /* VKCNetworkSource.m in Sources */,
 				998249051B7DE99A00131A26 /* VKCPolygon.m in Sources */,
+				99572BE51B8C4A7800245156 /* VKCAsyncTask.m in Sources */,
 				99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */,
 				99F873AC1B89CAC100BCD1A1 /* VKCJSONWrapper.m in Sources */,
 				998249081B7DF66A00131A26 /* VKCCity.m in Sources */,

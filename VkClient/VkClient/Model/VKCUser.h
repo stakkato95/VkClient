@@ -13,6 +13,6 @@
 
 @property (readonly, getter=firstName) NSString *firstName;
 @property (readonly, getter=lastName) NSString *lastName;
-@property (readonly, getter=isOnline) BOOL *online;
+@property (readonly, getter=isOnline) BOOL online;
 
 @end

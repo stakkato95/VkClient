@@ -17,6 +17,21 @@ static NSString * const LAST_NAME = @"last_name";
 static NSString * const ONLINE = @"online";
 static NSString * const HIDDEN = @"hidden";
 
+
+#pragma mark - Initializers
+
++ (NSMutableArray *)arrayWithJSON:(NSDictionary *)jsonData {
+    NSArray *rawObjects = [[jsonData objectForKey:RESPONSE] objectForKey:ITEMS];
+    NSMutableArray *parsedObjects = [NSMutableArray arrayWithCapacity:rawObjects.count];
+    
+    [rawObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        VKCUser *user = [VKCUser objectWithJSON:obj];
+        [parsedObjects addObject:user];
+    }];
+    return parsedObjects;
+}
+
+
 #pragma mark - Accessors
 
 - (NSString *)firstName {
