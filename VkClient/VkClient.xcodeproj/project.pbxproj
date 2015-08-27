@@ -11,11 +11,14 @@
 		991A885A1B80862300383566 /* VKCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A88591B80862300383566 /* VKCWebViewController.m */; };
 		991E0E761B8255F40047CC89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991E0E751B8255F40047CC89 /* Localizable.strings */; };
 		99572BE51B8C4A7800245156 /* VKCAsyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 99572BE41B8C4A7800245156 /* VKCAsyncTask.m */; };
+		9958CEB11B8F54E000B34AA6 /* VKCArrayMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9958CEB01B8F54E000B34AA6 /* VKCArrayMapper.m */; };
 		996966651B88EAD80092BCEA /* VKCFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996966641B88EAD80092BCEA /* VKCFriendsTableViewController.m */; };
 		998249011B7DD82D00131A26 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249001B7DD82D00131A26 /* ViewController.m */; };
 		998249051B7DE99A00131A26 /* VKCPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249041B7DE99A00131A26 /* VKCPolygon.m */; };
 		998249081B7DF66A00131A26 /* VKCCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 998249071B7DF66A00131A26 /* VKCCity.m */; };
 		998B1E3E1B87934600A088B3 /* VKCMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998B1E3D1B87934600A088B3 /* VKCMainNavigationController.m */; };
+		999182A91B8F90C100DE3FC0 /* VKCUserMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 999182A81B8F90C100DE3FC0 /* VKCUserMapper.m */; };
+		999A58BB1B8EEEC000FC16B6 /* VKCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 999A58BA1B8EEEC000FC16B6 /* VKCMessage.m */; };
 		999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1111B7E30BD00FF3912 /* VKCApi.m */; };
 		999DE1191B7E5D7600FF3912 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */; };
 		99E53CCD1B7CD4F3007F1231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CCC1B7CD4F3007F1231 /* main.m */; };
@@ -29,6 +32,9 @@
 		99F873AC1B89CAC100BCD1A1 /* VKCJSONWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F873AB1B89CAC100BCD1A1 /* VKCJSONWrapper.m */; };
 		99F873B01B89D0C600BCD1A1 /* VKCFriendsProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F873AF1B89D0C600BCD1A1 /* VKCFriendsProcessor.m */; };
 		99F873B31B89D29400BCD1A1 /* VKCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F873B21B89D29400BCD1A1 /* VKCUser.m */; };
+		99F93A471B8F3E0900521F0F /* VKCObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F93A461B8F3E0900521F0F /* VKCObjectMapper.m */; };
+		99F93A4A1B8F487200521F0F /* VKCNumberMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F93A491B8F487200521F0F /* VKCNumberMapper.m */; };
+		99F93A4D1B8F4B5B00521F0F /* VKCBoolMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F93A4C1B8F4B5B00521F0F /* VKCBoolMapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,8 @@
 		99572BE31B8C4A7800245156 /* VKCAsyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCAsyncTask.h; path = Common/Data/VKCAsyncTask.h; sourceTree = "<group>"; };
 		99572BE41B8C4A7800245156 /* VKCAsyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCAsyncTask.m; path = Common/Data/VKCAsyncTask.m; sourceTree = "<group>"; };
 		99572BE91B8C4BD700245156 /* VKCCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCCallback.h; path = Common/Data/VKCCallback.h; sourceTree = "<group>"; };
+		9958CEAF1B8F54E000B34AA6 /* VKCArrayMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCArrayMapper.h; path = Mapper/VKCArrayMapper.h; sourceTree = "<group>"; };
+		9958CEB01B8F54E000B34AA6 /* VKCArrayMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCArrayMapper.m; path = Mapper/VKCArrayMapper.m; sourceTree = "<group>"; };
 		9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCIdentifiable.h; path = Common/VKCIdentifiable.h; sourceTree = "<group>"; };
 		996966631B88EAD80092BCEA /* VKCFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCFriendsTableViewController.h; path = Controller/VKCFriendsTableViewController.h; sourceTree = "<group>"; };
 		996966641B88EAD80092BCEA /* VKCFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCFriendsTableViewController.m; path = Controller/VKCFriendsTableViewController.m; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 		998249071B7DF66A00131A26 /* VKCCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCCity.m; sourceTree = "<group>"; };
 		998B1E3C1B87934600A088B3 /* VKCMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCMainNavigationController.h; path = Controller/VKCMainNavigationController.h; sourceTree = "<group>"; };
 		998B1E3D1B87934600A088B3 /* VKCMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCMainNavigationController.m; path = Controller/VKCMainNavigationController.m; sourceTree = "<group>"; };
+		999182A71B8F90C100DE3FC0 /* VKCUserMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCUserMapper.h; path = Mapper/VKCUserMapper.h; sourceTree = "<group>"; };
+		999182A81B8F90C100DE3FC0 /* VKCUserMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCUserMapper.m; path = Mapper/VKCUserMapper.m; sourceTree = "<group>"; };
+		999A58B91B8EEEC000FC16B6 /* VKCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCMessage.h; sourceTree = "<group>"; };
+		999A58BA1B8EEEC000FC16B6 /* VKCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCMessage.m; sourceTree = "<group>"; };
 		999DE1101B7E30BD00FF3912 /* VKCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCApi.h; path = Api/VKCApi.h; sourceTree = "<group>"; };
 		999DE1111B7E30BD00FF3912 /* VKCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCApi.m; path = Api/VKCApi.m; sourceTree = "<group>"; };
 		999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
@@ -91,6 +103,13 @@
 		99F873AF1B89D0C600BCD1A1 /* VKCFriendsProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCFriendsProcessor.m; path = Processor/VKCFriendsProcessor.m; sourceTree = "<group>"; };
 		99F873B11B89D29400BCD1A1 /* VKCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCUser.h; sourceTree = "<group>"; };
 		99F873B21B89D29400BCD1A1 /* VKCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCUser.m; sourceTree = "<group>"; };
+		99F93A431B8F3CCD00521F0F /* VKCMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCMapper.h; sourceTree = "<group>"; };
+		99F93A451B8F3E0900521F0F /* VKCObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCObjectMapper.h; path = Mapper/VKCObjectMapper.h; sourceTree = "<group>"; };
+		99F93A461B8F3E0900521F0F /* VKCObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCObjectMapper.m; path = Mapper/VKCObjectMapper.m; sourceTree = "<group>"; };
+		99F93A481B8F487200521F0F /* VKCNumberMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCNumberMapper.h; path = Mapper/VKCNumberMapper.h; sourceTree = "<group>"; };
+		99F93A491B8F487200521F0F /* VKCNumberMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCNumberMapper.m; path = Mapper/VKCNumberMapper.m; sourceTree = "<group>"; };
+		99F93A4B1B8F4B5B00521F0F /* VKCBoolMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCBoolMapper.h; path = Mapper/VKCBoolMapper.h; sourceTree = "<group>"; };
+		99F93A4C1B8F4B5B00521F0F /* VKCBoolMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCBoolMapper.m; path = Mapper/VKCBoolMapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +210,7 @@
 		999FE6D81B7D1BF40045EDB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99F93A441B8F3D7C00521F0F /* Mapper */,
 				998249031B7DE99A00131A26 /* VKCPolygon.h */,
 				998249041B7DE99A00131A26 /* VKCPolygon.m */,
 				998249061B7DF66A00131A26 /* VKCCity.h */,
@@ -199,6 +219,8 @@
 				99F873AB1B89CAC100BCD1A1 /* VKCJSONWrapper.m */,
 				99F873B11B89D29400BCD1A1 /* VKCUser.h */,
 				99F873B21B89D29400BCD1A1 /* VKCUser.m */,
+				999A58B91B8EEEC000FC16B6 /* VKCMessage.h */,
+				999A58BA1B8EEEC000FC16B6 /* VKCMessage.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +306,24 @@
 				99F873AF1B89D0C600BCD1A1 /* VKCFriendsProcessor.m */,
 			);
 			name = Processor;
+			sourceTree = "<group>";
+		};
+		99F93A441B8F3D7C00521F0F /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				99F93A431B8F3CCD00521F0F /* VKCMapper.h */,
+				99F93A451B8F3E0900521F0F /* VKCObjectMapper.h */,
+				99F93A461B8F3E0900521F0F /* VKCObjectMapper.m */,
+				99F93A481B8F487200521F0F /* VKCNumberMapper.h */,
+				99F93A491B8F487200521F0F /* VKCNumberMapper.m */,
+				99F93A4B1B8F4B5B00521F0F /* VKCBoolMapper.h */,
+				99F93A4C1B8F4B5B00521F0F /* VKCBoolMapper.m */,
+				9958CEAF1B8F54E000B34AA6 /* VKCArrayMapper.h */,
+				9958CEB01B8F54E000B34AA6 /* VKCArrayMapper.m */,
+				999182A71B8F90C100DE3FC0 /* VKCUserMapper.h */,
+				999182A81B8F90C100DE3FC0 /* VKCUserMapper.m */,
+			);
+			name = Mapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,11 +430,17 @@
 				990180041B8619CF0083A923 /* VKCTokenStorage.m in Sources */,
 				99F873A91B89B6EB00BCD1A1 /* VKCNetworkSource.m in Sources */,
 				998249051B7DE99A00131A26 /* VKCPolygon.m in Sources */,
+				9958CEB11B8F54E000B34AA6 /* VKCArrayMapper.m in Sources */,
 				99572BE51B8C4A7800245156 /* VKCAsyncTask.m in Sources */,
+				999182A91B8F90C100DE3FC0 /* VKCUserMapper.m in Sources */,
+				99F93A4A1B8F487200521F0F /* VKCNumberMapper.m in Sources */,
 				99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */,
+				99F93A4D1B8F4B5B00521F0F /* VKCBoolMapper.m in Sources */,
 				99F873AC1B89CAC100BCD1A1 /* VKCJSONWrapper.m in Sources */,
 				998249081B7DF66A00131A26 /* VKCCity.m in Sources */,
+				99F93A471B8F3E0900521F0F /* VKCObjectMapper.m in Sources */,
 				999DE1191B7E5D7600FF3912 /* NSStringAdditions.m in Sources */,
+				999A58BB1B8EEEC000FC16B6 /* VKCMessage.m in Sources */,
 				99F873B31B89D29400BCD1A1 /* VKCUser.m in Sources */,
 				991A885A1B80862300383566 /* VKCWebViewController.m in Sources */,
 				99E53CCD1B7CD4F3007F1231 /* main.m in Sources */,
