@@ -10,15 +10,23 @@
 
 @interface AppDelegate ()
 
+- (void)throwException:(NSString *)pluginName;
+
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
 
-static NSDictionary *plugins;
+    NSMutableDictionary *plugins;
+    
+}
+
+
+#pragma mark - Default methods
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    plugins = @{
-                };
+    self->plugins = [[NSMutableDictionary alloc] init];
+    [self registerPlugin:[VKCNetworkSource sharedInstance]];
+    [self registerPlugin:[VKCFriendsProcessor sharedInstance]];
     return YES;
 }
 
@@ -129,6 +137,39 @@ static NSDictionary *plugins;
             abort();
         }
     }
+}
+
+
+#pragma mark - Custom methods PUBLIC
+
+- (void)registerPlugin:(id<VKCPlugin>)plugin {
+    [self->plugins setObject:plugin forKey:[plugin getName]];
+}
+
+- (void)requestWithDataSource:(NSString *)sourceName
+                    processor:(NSString *)processorName
+                        param:(id)param
+                     callback:(id<VKCCallback>)callback {
+    id<VKCDataSource> dataSource = [self->plugins objectForKey:sourceName];
+    id<VKCProcessor> processor = [self->plugins objectForKey:processorName];
+    
+    if (!dataSource) {
+        [self throwException:sourceName];
+    }
+    if (!processor) {
+        [self throwException:processorName];
+    }
+    
+    [[VKCAsyncTask taskWithDataSource:dataSource processor:processor param:param callback:callback] execute];
+}
+
+
+#pragma mark - Custom methods PRIVATE
+
+- (void)throwException:(NSString *)pluginName {
+    @throw [NSException exceptionWithName:@"Unknown plugin exception"
+                                   reason:[NSString stringWithFormat:@"Plugin with name %@", pluginName]
+                                 userInfo:@{ @"What to do?" : @"Register plugin with this name!"}];
 }
 
 @end

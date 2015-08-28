@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "VKCProcessor.h"
+#import "VKCUser.h"
+#import "VKCUserMapper.h"
+#import "VKCSingleton.h"
 
-@interface VKCFriendsProcessor : NSObject <VKCProcessor>
+@interface VKCFriendsProcessor : NSObject <VKCProcessor, VKCSingleton>
 
 @end

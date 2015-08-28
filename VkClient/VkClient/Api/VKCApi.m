@@ -7,47 +7,62 @@
 //
 
 #import "VKCApi.h"
-#import "VKCTokenStorage.h"
 
-@implementation VKCApi
+@interface VKCApi ()
+
+- (NSMutableString *)prepareRequestString:(NSDictionary *)headersMap;
+
+@end
+
+@implementation VKCApi {
+    
+    @private
+    VKCCredentials *credentials;
+    
+}
 
 #pragma mark - External constants
 
 NSString * const VK_COM = @"vk.com";
 NSString * const OAUTH_PATH = @"https://oauth.vk.com/authorize?client_id=%d&display=mobile&redirect_uri=%@&scope=%@&response_type=token&v=%g";
-NSString * const EXPIRES_IN = @"expires_in=";
+NSString * const EXPIRES_IN = @"expires_in";
+NSString * const USER_ID = @"user_id";
 
 
 #pragma mark - Internal constants
 
-int const CLIENT_ID = 5034492;
-NSString * const REDIRECT_URI = @"http://localhost";
-NSString * const SCOPE = @"friends,status";
-double const API_VERSION = 5.37;
-NSString * const ACCESS_TOKEN = @"access_token";
-NSString * const METHOD_PATH = @"https://api.vk.com/method/";
+static int const CLIENT_ID = 5034492;
+static NSString * const REDIRECT_URI = @"http://localhost";
+static NSString * const SCOPE = @"friends,status";
+static double const API_VERSION = 5.37;
+static NSString * const ACCESS_TOKEN = @"access_token";
+static NSString * const METHOD_PATH = @"https://api.vk.com/method/%@.%@?";
 
 
 #pragma mark - Method types
 
-NSString * const GET = @"get";
+static NSString * const METHOD_TYPE = @"method_type";
+static NSString * const METHOD_GET = @"get";
 
 
 #pragma mark - Data types
 
-NSString * const FRIENDS = @"friends";
+static NSString * const DATA_TYPE = @"data_type";
+static NSString * const DATA_FRIENDS = @"friends";
 
 
 #pragma mark - Parameters Constants
 
-NSString * const USER_ID = @"user_id";
-NSString * const ORDER = @"order";
-NSString * const FIELDS = @"fields";
+static NSString * const ORDER = @"order";
+static NSString * const ORDER_NAME = @"name";
+
+static NSString * const FIELDS = @"fields";
+static NSString * const FIELDS_ONLINE = @"online";
 
 
-#pragma mark - Methods
+#pragma mark - Public methods
 
-+ (VKCApi *)sharedInstance {
++ (instancetype)sharedInstance {
     static VKCApi *instance = nil;
     static dispatch_once_t isDispatched;
     dispatch_once(&isDispatched, ^{ instance = [[VKCApi alloc] init]; });
@@ -62,19 +77,54 @@ NSString * const FIELDS = @"fields";
 - (BOOL)checkForToken:(NSMutableURLRequest *)request {
     NSString *urlString = request.URL.absoluteString;
     if ([urlString containsString:ACCESS_TOKEN]) {
-        [[VKCTokenStorage sharedInstance] retainToken:urlString];
-        return YES;
+        VKCCredentials *aCredentials = [[VKCCredentialsUtil sharedInstance] parseCredentials:urlString];
+        if (aCredentials) {
+            self->credentials = aCredentials;
+            [[VKCCredentialsStorage sharedInstance] retainCredentials:aCredentials];
+            return YES;
+        }
     }
     return NO;
 }
 
-- (void)setToken: (NSString *)tokenString {
-    self->token = tokenString;
+- (void)setCredentials:(VKCCredentials *)aCredentials {
+    self->credentials = aCredentials;
 }
 
 
-- (void)getFriends {
+- (void)getFriends:(id<VKCCallback>)callback {
+    NSString *requestString = [self prepareRequestString:[NSMutableDictionary dictionaryWithDictionary:@{METHOD_TYPE : METHOD_GET,
+                                                                                                         DATA_TYPE : DATA_FRIENDS,
+                                                                                                         USER_ID : credentials.userId,
+                                                                                                         ORDER : ORDER_NAME,
+                                                                                                         FIELDS : FIELDS_ONLINE}]];
     
+    AppDelegate *application = [[UIApplication sharedApplication] delegate];
+    [application requestWithDataSource:[[VKCNetworkSource sharedInstance] getName] processor:[[VKCFriendsProcessor sharedInstance] getName] param:requestString callback:callback];
+}
+
+
+#pragma mark - Private methods
+
+- (NSMutableString *)prepareRequestString:(NSMutableDictionary *)headersMap {
+    NSMutableString *requestString = [[NSMutableString alloc] init];
+    
+    NSString *methodType = [headersMap valueForKey:METHOD_TYPE];
+    NSString *dataType = [headersMap valueForKey:DATA_TYPE];
+    if (!methodType || !dataType) {
+        @throw [NSException exceptionWithName:@"Malformed request dictionary"
+                                       reason:@"Undefined METHOD_TYPE or DATA_TYPE"
+                                     userInfo:@{ @"What to do?" : @"Look through dictionary declaration attentively!"}];
+    }
+    [headersMap removeObjectsForKeys:@[METHOD_TYPE, DATA_TYPE]];
+    
+    [requestString appendFormat:METHOD_PATH, dataType, methodType];
+    [headersMap enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [requestString appendFormat:@"%@=%@&", key, obj];
+    }];
+    [requestString appendFormat:@"v=%.2f&%@=%@", API_VERSION, ACCESS_TOKEN, self->credentials.token];
+    
+    return requestString;
 }
 
 @end

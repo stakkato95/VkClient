@@ -15,8 +15,7 @@
 @implementation VKCFriendsTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
+    [[VKCApi sharedInstance] getFriends:self];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -96,5 +95,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma mark - Callbakc
+
+- (void)loadingStart {
+    
+}
+
+- (void)loadingFinished:(id)data {
+    
+}
+
+- (void)loadingFailed:(id)error {
+    
+}
 
 @end

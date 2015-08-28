@@ -13,7 +13,11 @@
 
 @interface VKCAsyncTask : NSObject
 
-+ (VKCAsyncTask *)taskWithParam:(id)aParam dataSource:(id<VKCDataSource>)aDataSource processor:(id<VKCProcessor>)aProcessor callback:(id<VKCCallback>)aCallback;
++ (instancetype)taskWithDataSource:(id<VKCDataSource>)aDataSource
+                         processor:(id<VKCProcessor>)aProcessor
+                             param:(id)aParam
+                          callback:(id<VKCCallback>)aCallback;
+
 - (void)execute;
 
 @end

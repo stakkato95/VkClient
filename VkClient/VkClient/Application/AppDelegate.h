@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "VKCPlugin.h"
+#import "VKCDataSource.h"
+#import "VKCProcessor.h"
+#import "VKCAsyncTask.h"
+#import "VKCCallback.h"
+#import "VKCNetworkSource.h"
+#import "VKCFriendsProcessor.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+#pragma mark - Default properties & methods
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -19,6 +28,16 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+
+#pragma mark - Custom properties & methods
+
+- (void)registerPlugin:(id<VKCPlugin>)plugin;
+
+- (void)requestWithDataSource:(NSString *)sourceName
+                    processor:(NSString *)processorName
+                        param:(id)param
+                     callback:(id<VKCCallback>)callback;
 
 
 @end

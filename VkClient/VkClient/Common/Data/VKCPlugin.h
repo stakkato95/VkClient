@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VKCSingleton.h"
 
-@protocol VKCPlugin <NSObject, VKCSingleton>
+@protocol VKCPlugin <NSObject>
 
 - (NSString *)getName;
 

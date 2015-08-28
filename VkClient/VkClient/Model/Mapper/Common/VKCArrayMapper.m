@@ -8,7 +8,18 @@
 
 #import "VKCArrayMapper.h"
 
-@implementation VKCArrayMapper
+@implementation VKCArrayMapper {
+
+    @private
+    id<VKCMapper> objectMapper;
+    
+}
+
++ (instancetype)arrayMapperWithItemMapper:(VKCObjectMapper *)objectMapper {
+    VKCArrayMapper *arrayMapper = [[VKCArrayMapper alloc] init];
+    arrayMapper->objectMapper = objectMapper;
+    return arrayMapper;
+}
 
 - (id)mapFromSourceObject:(id)sourceObject error:(NSError *)error {
     NSMutableArray *arrayOfEndObjects = [[NSMutableArray alloc] init];

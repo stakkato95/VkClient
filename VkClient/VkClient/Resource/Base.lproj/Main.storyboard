@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Main Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="xeW-FA-ce1">
             <objects>
-                <navigationController id="AWy-c8-ELa" customClass="VKCMainNavigationController" sceneMemberID="viewController">
+                <navigationController id="AWy-c8-ELa" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SBD-0u-jsl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -54,7 +54,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="ire-la-5GB" id="gNt-gS-0GK"/>
                         <outlet property="webView" destination="cBB-Lo-VIA" id="tST-rL-H8j"/>
-                        <segue destination="GxS-Cv-4Xe" kind="showDetail" identifier="showFriendsView" id="BZx-bu-A9Q"/>
+                        <segue destination="GxS-Cv-4Xe" kind="show" identifier="showFriendsView" id="BZx-bu-A9Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EK3-lh-xtN" userLabel="First Responder" sceneMemberID="firstResponder"/>

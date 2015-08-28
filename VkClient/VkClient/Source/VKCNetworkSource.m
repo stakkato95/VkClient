@@ -10,7 +10,7 @@
 
 @implementation VKCNetworkSource
 
-+ (id)sharedInstance {
++ (instancetype)sharedInstance {
     static VKCNetworkSource *instance = nil;
     static dispatch_once_t isDispatched;
     dispatch_once(&isDispatched, ^{ instance = [[VKCNetworkSource alloc] init]; });
@@ -18,8 +18,8 @@
 }
 
 - (NSData *)getData:(NSString *)parameter {
-    NSURL *authUrl = [NSURL URLWithString:parameter];
-    NSURLRequest *request = [NSURLRequest requestWithURL:authUrl];
+    NSURL *requestUrl = [NSURL URLWithString:parameter];
+    NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
     
     NSURLResponse *response;
     NSError *error;
@@ -27,7 +27,7 @@
 }
 
 - (NSString *)getName {
-    return nil;
+    return NSStringFromClass([self class]);
 }
 
 @end

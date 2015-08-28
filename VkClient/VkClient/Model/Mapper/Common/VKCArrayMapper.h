@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "VKCMapper.h"
+#import "VKCObjectMapper.h"
 
-@interface VKCArrayMapper : NSObject <VKCMapper> {
-    
-    @private
-    id<VKCMapper> objectMapper;
-    
-}
+@interface VKCArrayMapper : NSObject <VKCMapper>
+
++ (instancetype)arrayMapperWithItemMapper:(VKCObjectMapper *)objectMapper;
 
 @end

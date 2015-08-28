@@ -16,7 +16,6 @@
 
 #pragma mark - Constants
 
-extern NSString * const RESPONSE;
 extern NSString * const ITEMS;
 
 

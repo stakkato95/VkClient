@@ -10,6 +10,6 @@
 
 @protocol VKCSingleton <NSObject>
 
-+ (id)sharedInstance;
++ (instancetype)sharedInstance;
 
 @end

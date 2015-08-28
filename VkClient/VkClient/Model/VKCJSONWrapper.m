@@ -12,8 +12,7 @@
 
 #pragma mark - Constants
 
-NSString * const RESPONSE = @"response";
-NSString * const ITEMS = @"items";
+
 
 
 #pragma mark - Initializers

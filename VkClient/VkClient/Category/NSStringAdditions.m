@@ -34,7 +34,14 @@ char const WHITE_SPACE_CHAR = ' ';
     NSRange startRange = [self rangeOfString:start];
     int secondRangeStart = startRange.location + startRange.length;
     NSRange secondSubstringRange = NSMakeRange(secondRangeStart, self.length - secondRangeStart);
-    NSRange endRange = [self rangeOfString:end options:kNilOptions range:secondSubstringRange];
+    
+    NSRange endRange;
+    if (end.length == 0) {
+        endRange = NSMakeRange(self.length, 0);
+    } else {
+        endRange = [self rangeOfString:end options:kNilOptions range:secondSubstringRange];
+    }
+    
     return [self substringWithRange:NSMakeRange(startRange.location + start.length, endRange.location - startRange.location - start.length)];
 }
 

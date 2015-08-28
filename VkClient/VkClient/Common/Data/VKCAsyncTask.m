@@ -9,18 +9,22 @@
 #import "VKCAsyncTask.h"
 
 @implementation VKCAsyncTask {
+
     @private
-    id param;
     id<VKCDataSource> dataSource;
     id<VKCProcessor> processor;
+    id param;
     id<VKCCallback> callback;
+    
 }
 
-+ (VKCAsyncTask *)taskWithParam:(id)aParam dataSource:(id<VKCDataSource>)aDataSource processor:(id<VKCProcessor>)aProcessor callback:(id<VKCCallback>)aCallback {
++ (instancetype)taskWithDataSource:(id<VKCDataSource>)aDataSource
+                         processor:(id<VKCProcessor>)aProcessor
+                             param:(id)aParam callback:(id<VKCCallback>)aCallback {
     VKCAsyncTask *task = [[VKCAsyncTask alloc] init];
-    task->param = aParam;
     task->dataSource = aDataSource;
     task->processor = aProcessor;
+    task->param = aParam;
     task->callback = aCallback;
     return task;
 }
@@ -41,14 +45,21 @@
                 [callback loadingStart];
             });
             id data = [self->dataSource getData:self->param];
-            id result = [self->processor process:data];
+            NSError *processingError;
+            id result = [self->processor process:data error:processingError];
+            if (processingError) {
+                dispatch_sync(mainQueue, ^{
+                    [callback loadingFailed:processingError];
+                });
+            }
+            
             dispatch_sync(mainQueue, ^{
-                [callback loadingFinished:result];
+                [callback loadingFailed:result];
             });
         }
         @catch (NSException *exception) {
             dispatch_sync(mainQueue, ^{
-                [callback loadingError:exception];
+                [callback loadingFailed:exception];
             });
         }
     });

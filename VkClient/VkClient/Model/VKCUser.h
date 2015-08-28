@@ -11,8 +11,8 @@
 
 @interface VKCUser : VKCJSONWrapper
 
-@property (readonly, getter=firstName) NSString *firstName;
-@property (readonly, getter=lastName) NSString *lastName;
-@property (readonly, getter=isOnline) BOOL online;
+@property (readonly) NSString *firstName;
+@property (readonly) NSString *lastName;
+@property (readonly) BOOL online;
 
 @end

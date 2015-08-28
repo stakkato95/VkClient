@@ -7,26 +7,26 @@
 //
 
 #import "VKCFriendsProcessor.h"
-#import "VKCUser.h"
 
 @implementation VKCFriendsProcessor
 
-+ (id)sharedInstance {
++ (instancetype)sharedInstance {
     static VKCFriendsProcessor *instance = nil;
     static dispatch_once_t isDispatched;
     dispatch_once(&isDispatched, ^{ instance = [[VKCFriendsProcessor alloc] init]; });
     return instance;
 }
 
-- (id)process:(NSData *)jsonData {
+- (id)process:(NSData *)jsonData error:(NSError *)error {
     NSArray *friendsArray = nil;
     
     if (jsonData) {
-        NSError *error;
-        NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-        
+        NSDictionary *preparedJson = [[VKCJSONSerializationUtil sharedInstance] serialize:jsonData error:error];
         if (error == noErr) {
-            friendsArray = [VKCUser arrayWithJSON:responseJson];
+            friendsArray = [[[VKCUserMapper alloc] init] mapFromSourceObject:preparedJson error:error];
+            if (error != noErr) {
+                return nil;
+            }
         }
     }
     return friendsArray;

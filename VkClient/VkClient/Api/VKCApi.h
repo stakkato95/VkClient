@@ -7,23 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
 #import "VKCSingleton.h"
 #import "VKCCallback.h"
+#import "VKCFriendsProcessor.h"
+#import "VKCCredentialsStorage.h"
+#import "VKCCredentials.h"
+#import "VKCCredentialsUtil.h"
 
-@interface VKCApi : NSObject <VKCSingleton> {
-    @private
-    NSString *token;
-}
+@interface VKCApi : NSObject <VKCSingleton>
 
 extern NSString * const VK_COM;
 extern NSString * const OAUTH_PATH;
 extern NSString * const EXPIRES_IN;
+extern NSString * const USER_ID;
 
-+ (VKCApi *)sharedInstance;
 - (NSURLRequest *)getOAuthRequest;
 - (BOOL)checkForToken:(NSURLRequest *)urlRequest;
-- (void)setToken: (NSString *)tokenString;
-
+- (void)setCredentials:(VKCCredentials *)aCredentials;
 - (void)getFriends:(id<VKCCallback>)callback;
 
 @end

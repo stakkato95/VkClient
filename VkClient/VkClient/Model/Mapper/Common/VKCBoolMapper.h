@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VKCMapper.h"
 
-@interface VKCBoolMapper : NSObject
+@interface VKCBoolMapper : NSObject <VKCMapper>
 
 @end

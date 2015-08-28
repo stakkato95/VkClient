@@ -12,6 +12,6 @@
 
 @protocol VKCProcessor <NSObject, VKCPlugin>
 
-- (id)process:(id)parameter;
+- (id)process:(id)parameter error:(NSError *)error;
 
 @end

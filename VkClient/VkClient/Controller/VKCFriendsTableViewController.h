@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VKCCallback.h"
+#import "VKCApi.h"
 
-@interface VKCFriendsTableViewController : UITableViewController
+@interface VKCFriendsTableViewController : UITableViewController <VKCCallback>
 
 @end

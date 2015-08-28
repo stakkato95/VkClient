@@ -12,6 +12,6 @@
 
 - (void)loadingStart;
 - (void)loadingFinished:(id)data;
-- (void)loadingError:(id)error;
+- (void)loadingFailed:(id)error;
 
 @end

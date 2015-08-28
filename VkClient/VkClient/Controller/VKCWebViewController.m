@@ -10,11 +10,16 @@
 #import "VKCWebViewController.h"
 #import "VKCApi.h"
 #import "VKCWebKitMissingBase.h"
-#import "VKCTokenStorage.h"
+#import "VKCCredentialsStorage.h"
+#import "VKCCredentials.h"
 
-@implementation VKCWebViewController
+@implementation VKCWebViewController {
+    
+    UIAlertView *alert;
+    
+}
 
-#pragma mark - WebViewController`
+#pragma mark - WebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,9 +27,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSString *token = [[VKCTokenStorage sharedInstance] obtainToken];
-    if (token) {
-        [[VKCApi sharedInstance] setToken:token];
+    VKCCredentials *credentials = [[VKCCredentialsStorage sharedInstance] obtainCredentials];
+    if (credentials) {
+        [[VKCApi sharedInstance] setCredentials:credentials];
         [self performSegue];
         return;
     }

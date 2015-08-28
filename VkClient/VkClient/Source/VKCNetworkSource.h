@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "VKCDataSource.h"
 
-@interface VKCNetworkSource : NSObject <VKCDataSource>
+@interface VKCNetworkSource : NSObject <VKCDataSource, VKCSingleton>
 
 @end
