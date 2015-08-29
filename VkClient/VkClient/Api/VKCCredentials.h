@@ -18,4 +18,6 @@
                               userId:(NSString *)userId
                       expirationDate:(NSString *)expirationDate;
 
+- (NSData *)tokenData;
+
 @end

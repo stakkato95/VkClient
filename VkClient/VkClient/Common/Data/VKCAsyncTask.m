@@ -54,7 +54,7 @@
             }
             
             dispatch_sync(mainQueue, ^{
-                [callback loadingFailed:result];
+                [callback loadingFinished:result];
             });
         }
         @catch (NSException *exception) {

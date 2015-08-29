@@ -35,40 +35,43 @@ static NSString * const DATE_FORMAT = @"YYYY-MM-dd HH:mm:ss Z:";
 - (instancetype)init {
     self = [super init];
     self->attributesQuery = @{
-                              (__bridge id)(kSecClass) : (__bridge id)(kSecClassInternetPassword),
-                              (__bridge id)(kSecAttrAccessible) : (__bridge id)(kSecAttrAccessibleAfterFirstUnlock),
-                              (__bridge id)(kSecAttrProtocol) : (__bridge id)(kSecAttrProtocolHTTPS),
-                              (__bridge id)(kSecAttrAuthenticationType) : (__bridge id)(kSecAttrAuthenticationTypeHTMLForm),
-                              (__bridge id)(kSecAttrPath) : OAUTH_PATH,
-                              (__bridge id)(kSecAttrAccount) : VK_COM,
-                              (__bridge id)(kSecReturnAttributes) : (__bridge id)(kCFBooleanTrue)
+                              (__bridge id)kSecClass : (__bridge id)kSecClassInternetPassword,
+                              (__bridge id)kSecAttrAccessible : (__bridge id)kSecAttrAccessibleAfterFirstUnlock,
+                              (__bridge id)kSecAttrProtocol : (__bridge id)kSecAttrProtocolHTTPS,
+                              (__bridge id)kSecAttrAuthenticationType : (__bridge id)kSecAttrAuthenticationTypeHTMLForm,
+                              (__bridge id)kSecAttrPath : OAUTH_PATH,
+                              (__bridge id)kSecAttrAccount : VK_COM,
+                              (__bridge id)kSecReturnAttributes : (__bridge id)(kCFBooleanTrue)
                               };
     return self;
 }
 
 - (void)retainCredentials:(VKCCredentials *)credentials {
-    NSData *newToken = [credentials.token dataUsingEncoding:NSUTF8StringEncoding];
-    
     int isTokenInKeychain = [self isTokenInKeychain:nil];
     if (isTokenInKeychain == errSecItemNotFound) {
         NSDictionary *insertQuery = @{
-                                      (__bridge id)kSecClass : (__bridge id)(kSecClassInternetPassword),
-                                      (__bridge id)(kSecAttrAccessible) : (__bridge id)(kSecAttrAccessibleAfterFirstUnlock),
-                                      (__bridge id)(kSecAttrProtocol) : (__bridge id)(kSecAttrProtocolHTTPS),
-                                      (__bridge id)(kSecAttrAuthenticationType) : (__bridge id)(kSecAttrAuthenticationTypeHTMLForm),
-                                      (__bridge id)(kSecAttrComment) : credentials.expirationDate,
+                                      (__bridge id)kSecClass : (__bridge id)kSecClassInternetPassword,
+                                      (__bridge id)kSecAttrAccessible : (__bridge id)kSecAttrAccessibleAfterFirstUnlock,
+                                      (__bridge id)kSecAttrProtocol : (__bridge id)kSecAttrProtocolHTTPS,
+                                      (__bridge id)kSecAttrAuthenticationType : (__bridge id)kSecAttrAuthenticationTypeHTMLForm,
+                                      (__bridge id)kSecAttrComment : credentials.expirationDate,
                                       (__bridge id)kSecAttrDescription : credentials.userId,
-                                      (__bridge id)(kSecAttrPath) : OAUTH_PATH,
-                                      (__bridge id)(kSecAttrAccount) : VK_COM,
-                                      (__bridge id)(kSecValueData) : newToken
+                                      (__bridge id)kSecAttrPath : OAUTH_PATH,
+                                      (__bridge id)kSecAttrAccount : VK_COM,
+                                      (__bridge id)kSecValueData : credentials.tokenData
                                       };
         
         
         OSStatus isTokenRetained = SecItemAdd((__bridge CFDictionaryRef)insertQuery, NULL);
         NSLog(@"isTokenRetained = %@", isTokenRetained == 0 ? @"YES" : @"NO");
     } else {
-        NSDictionary *updateQuery = @{ (__bridge id)(kSecValueData) : newToken };
-        OSStatus isTokenUpdated = SecItemUpdate((__bridge CFDictionaryRef) self->attributesQuery, (__bridge CFDictionaryRef) updateQuery);
+        NSMutableDictionary *updateQuery = [NSMutableDictionary dictionaryWithDictionary:attributesQuery];
+        [updateQuery removeObjectForKey:(__bridge id)kSecReturnAttributes];
+        NSDictionary *attributesToUpdate = @{
+                                             (__bridge id)(kSecValueData) : credentials.tokenData,
+                                             (__bridge id)kSecAttrComment : credentials.expirationDate
+                                             };
+        OSStatus isTokenUpdated = SecItemUpdate((__bridge CFDictionaryRef) updateQuery, (__bridge CFDictionaryRef) attributesToUpdate);
         NSLog(@"isTokenUpdated = %@", isTokenUpdated == 0 ? @"YES" : @"NO");
     }
 }
@@ -85,7 +88,7 @@ static NSString * const DATE_FORMAT = @"YYYY-MM-dd HH:mm:ss Z:";
     [dateFormatter setDateFormat:DATE_FORMAT];
     NSDate *expirationDate = [dateFormatter dateFromString:[tokenQuery valueForKey:(__bridge id)kSecAttrComment]];
     
-    if (isTokenInKeychain == errSecSuccess && expirationDate && [[NSDate date] earlierDate:expirationDate]) {
+    if (isTokenInKeychain == errSecSuccess && expirationDate && [[NSDate date] compare:expirationDate] == NSOrderedAscending) {
         NSString *userId = [tokenQuery valueForKey:(__bridge id)kSecAttrDescription];
         
         [tokenQuery removeObjectForKey:(__bridge id)(kSecReturnAttributes)];

@@ -8,13 +8,28 @@
 
 #import "VKCFriendsTableViewController.h"
 
-@interface VKCFriendsTableViewController ()
+@interface VKCFriendsTableViewController()
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation VKCFriendsTableViewController
+@implementation VKCFriendsTableViewController {
+    
+    @private
+    NSArray *friendsArray;
+    
+}
+
+static NSString * const CELL_ID = @"friendsTableViewCell";
+static int const FRIEND_NAME_TAG = 0;
+static int const STATUS_TAG = 1;
+static int const IMAGE_TAG = 2;
+
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [[VKCApi sharedInstance] getFriends:self];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -31,26 +46,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return friendsArray.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:FRIEND_NAME_TAG];
+    UILabel *statusLabel = (UILabel *)[cell viewWithTag:STATUS_TAG];
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
     
-    // Configure the cell...
-    
+    VKCUser *friend = [friendsArray objectAtIndex:indexPath.row];
+    nameLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
+    statusLabel.text = @"Status will be here";
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -100,15 +113,23 @@
 #pragma mark - Callbakc
 
 - (void)loadingStart {
-    
+    self.tableView.hidden = YES;
+    [self.activityIndicator startAnimating];
 }
 
 - (void)loadingFinished:(id)data {
+    self.tableView.hidden = NO;
+    [self.activityIndicator stopAnimating];
     
+    if (data) {
+        self->friendsArray = data;
+        [self.tableView reloadData];
+    }
 }
 
 - (void)loadingFailed:(id)error {
-    
+    self.tableView.hidden = YES;
+    [self.activityIndicator stopAnimating];
 }
 
 @end

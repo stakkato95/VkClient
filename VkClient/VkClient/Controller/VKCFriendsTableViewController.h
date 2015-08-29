@@ -10,6 +10,6 @@
 #import "VKCCallback.h"
 #import "VKCApi.h"
 
-@interface VKCFriendsTableViewController : UITableViewController <VKCCallback>
+@interface VKCFriendsTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, VKCCallback>
 
 @end

@@ -20,4 +20,8 @@
     return credentials;
 }
 
+- (NSData *)tokenData {
+    return [self.token dataUsingEncoding:NSUTF8StringEncoding];
+}
+
 @end
