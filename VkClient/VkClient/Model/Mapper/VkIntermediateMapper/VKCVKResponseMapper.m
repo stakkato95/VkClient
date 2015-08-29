@@ -11,18 +11,18 @@
 @implementation VKCVKResponseMapper {
     
     @private
-    VKCVKArrayWrapMapper *arrayMapper;
+    VKCVKArrayWrapMapper *vkArrayWrapMapper;
     
 }
 
-+ (instancetype)mapperWithVkArrayWrapMapper:(VKCVKArrayWrapMapper *)arrayMapper {
++ (instancetype)vkResponseMapperWithVkArrayWrapMapper:(VKCVKArrayWrapMapper *)vkArrayWrapMapper {
     VKCVKResponseMapper *wrapperMapper = [[VKCVKResponseMapper alloc] init];
-    wrapperMapper->arrayMapper = arrayMapper;
+    wrapperMapper->vkArrayWrapMapper = vkArrayWrapMapper;
     return wrapperMapper;
 }
 
 - (id)mapFromSourceObject:(id)sourceObject error:(NSError *)error {
-    VKCObjectMapper *wrapMapper = [VKCObjectMapper objectMapperForType:[VKCVKResponse class] mapperItems:@[[VKCMapperItem itemWithJSONKey:RESPONSE propertyName:RESPONSE mapper:arrayMapper]]];
+    VKCObjectMapper *wrapMapper = [VKCObjectMapper objectMapperForType:[VKCVKResponse class] mapperItems:@[[VKCMapperItem itemWithJSONKey:RESPONSE propertyName:RESPONSE mapper:self->vkArrayWrapMapper]]];
     return [wrapMapper mapFromSourceObject:sourceObject error:error];
 }
 

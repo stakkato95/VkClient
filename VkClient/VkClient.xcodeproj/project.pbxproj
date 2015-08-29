@@ -25,6 +25,7 @@
 		999A58BB1B8EEEC000FC16B6 /* VKCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 999A58BA1B8EEEC000FC16B6 /* VKCMessage.m */; };
 		999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1111B7E30BD00FF3912 /* VKCApi.m */; };
 		999DE1191B7E5D7600FF3912 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */; };
+		99C1EDB81B91BDC500D6AE5C /* VKCVKBatchMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C1EDB71B91BDC500D6AE5C /* VKCVKBatchMapper.m */; };
 		99E53CCD1B7CD4F3007F1231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CCC1B7CD4F3007F1231 /* main.m */; };
 		99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CCF1B7CD4F3007F1231 /* AppDelegate.m */; };
 		99E53CD31B7CD4F3007F1231 /* VkClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CD11B7CD4F3007F1231 /* VkClient.xcdatamodeld */; };
@@ -35,12 +36,9 @@
 		99EF12F51B90CD3200FDFE9C /* VKCVKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EF12F41B90CD3200FDFE9C /* VKCVKResponse.m */; };
 		99EF12F81B90CE2800FDFE9C /* VKCVKResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EF12F71B90CE2800FDFE9C /* VKCVKResponseMapper.m */; };
 		99F873A91B89B6EB00BCD1A1 /* VKCNetworkSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F873A81B89B6EB00BCD1A1 /* VKCNetworkSource.m */; };
-		99F873AC1B89CAC100BCD1A1 /* VKCJSONWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F873AB1B89CAC100BCD1A1 /* VKCJSONWrapper.m */; };
 		99F873B01B89D0C600BCD1A1 /* VKCFriendsProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F873AF1B89D0C600BCD1A1 /* VKCFriendsProcessor.m */; };
 		99F873B31B89D29400BCD1A1 /* VKCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F873B21B89D29400BCD1A1 /* VKCUser.m */; };
 		99F93A471B8F3E0900521F0F /* VKCObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F93A461B8F3E0900521F0F /* VKCObjectMapper.m */; };
-		99F93A4A1B8F487200521F0F /* VKCNumberMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F93A491B8F487200521F0F /* VKCNumberMapper.m */; };
-		99F93A4D1B8F4B5B00521F0F /* VKCBoolMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F93A4C1B8F4B5B00521F0F /* VKCBoolMapper.m */; };
 		99FF42861B9097C2006CBD62 /* VKCCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FF42851B9097C2006CBD62 /* VKCCredentials.m */; };
 		99FF42891B909B27006CBD62 /* VKCCredentialsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FF42881B909B27006CBD62 /* VKCCredentialsUtil.m */; };
 /* End PBXBuildFile section */
@@ -65,18 +63,18 @@
 		99572BE31B8C4A7800245156 /* VKCAsyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCAsyncTask.h; path = Common/Data/VKCAsyncTask.h; sourceTree = "<group>"; };
 		99572BE41B8C4A7800245156 /* VKCAsyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCAsyncTask.m; path = Common/Data/VKCAsyncTask.m; sourceTree = "<group>"; };
 		99572BE91B8C4BD700245156 /* VKCCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCCallback.h; path = Common/Data/VKCCallback.h; sourceTree = "<group>"; };
-		9958CEAF1B8F54E000B34AA6 /* VKCArrayMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCArrayMapper.h; path = Mapper/Common/VKCArrayMapper.h; sourceTree = "<group>"; };
-		9958CEB01B8F54E000B34AA6 /* VKCArrayMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCArrayMapper.m; path = Mapper/Common/VKCArrayMapper.m; sourceTree = "<group>"; };
+		9958CEAF1B8F54E000B34AA6 /* VKCArrayMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCArrayMapper.h; sourceTree = "<group>"; };
+		9958CEB01B8F54E000B34AA6 /* VKCArrayMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCArrayMapper.m; sourceTree = "<group>"; };
 		9968C3EE1B7F7456004CF095 /* VKCIdentifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCIdentifiable.h; path = Common/VKCIdentifiable.h; sourceTree = "<group>"; };
 		996966631B88EAD80092BCEA /* VKCFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCFriendsTableViewController.h; path = Controller/VKCFriendsTableViewController.h; sourceTree = "<group>"; };
 		996966641B88EAD80092BCEA /* VKCFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCFriendsTableViewController.m; path = Controller/VKCFriendsTableViewController.m; sourceTree = "<group>"; };
 		996966691B88FABB0092BCEA /* VKCWebKitMissingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCWebKitMissingBase.h; path = Common/VKCWebKitMissingBase.h; sourceTree = "<group>"; };
-		997514F21B904B7F001F8078 /* VKCMapperItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCMapperItem.h; path = Mapper/Base/VKCMapperItem.h; sourceTree = "<group>"; };
-		997514F31B904B7F001F8078 /* VKCMapperItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCMapperItem.m; path = Mapper/Base/VKCMapperItem.m; sourceTree = "<group>"; };
+		997514F21B904B7F001F8078 /* VKCMapperItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCMapperItem.h; sourceTree = "<group>"; };
+		997514F31B904B7F001F8078 /* VKCMapperItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCMapperItem.m; sourceTree = "<group>"; };
 		997514F61B90544F001F8078 /* VKCJSONConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCJSONConstants.h; path = Api/VKCJSONConstants.h; sourceTree = "<group>"; };
 		997514F71B90544F001F8078 /* VKCJSONConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCJSONConstants.m; path = Api/VKCJSONConstants.m; sourceTree = "<group>"; };
-		997514FB1B9058F6001F8078 /* VKCVKArrayWrapMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCVKArrayWrapMapper.h; path = Mapper/ConcreteMapper/VKCVKArrayWrapMapper.h; sourceTree = "<group>"; };
-		997514FC1B9058F6001F8078 /* VKCVKArrayWrapMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCVKArrayWrapMapper.m; path = Mapper/ConcreteMapper/VKCVKArrayWrapMapper.m; sourceTree = "<group>"; };
+		997514FB1B9058F6001F8078 /* VKCVKArrayWrapMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCVKArrayWrapMapper.h; path = ../Mapper/VkIntermediateMapper/VKCVKArrayWrapMapper.h; sourceTree = "<group>"; };
+		997514FC1B9058F6001F8078 /* VKCVKArrayWrapMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCVKArrayWrapMapper.m; path = ../Mapper/VkIntermediateMapper/VKCVKArrayWrapMapper.m; sourceTree = "<group>"; };
 		997514FE1B9059FC001F8078 /* VKCVKArrayWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCVKArrayWrap.h; sourceTree = "<group>"; };
 		997514FF1B9059FC001F8078 /* VKCVKArrayWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCVKArrayWrap.m; sourceTree = "<group>"; };
 		997515021B906202001F8078 /* VKCJSONSerializationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCJSONSerializationUtil.h; path = Util/VKCJSONSerializationUtil.h; sourceTree = "<group>"; };
@@ -96,6 +94,8 @@
 		999DE1111B7E30BD00FF3912 /* VKCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCApi.m; path = Api/VKCApi.m; sourceTree = "<group>"; };
 		999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
 		999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		99C1EDB61B91BDC500D6AE5C /* VKCVKBatchMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCVKBatchMapper.h; path = ../Mapper/VkIntermediateMapper/VKCVKBatchMapper.h; sourceTree = "<group>"; };
+		99C1EDB71B91BDC500D6AE5C /* VKCVKBatchMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCVKBatchMapper.m; path = ../Mapper/VkIntermediateMapper/VKCVKBatchMapper.m; sourceTree = "<group>"; };
 		99E53CC71B7CD4F3007F1231 /* VkClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E53CCB1B7CD4F3007F1231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E53CCC1B7CD4F3007F1231 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,26 +110,20 @@
 		99E53CE91B7CD4F3007F1231 /* VkClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkClientTests.m; sourceTree = "<group>"; };
 		99EF12F31B90CD3200FDFE9C /* VKCVKResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCVKResponse.h; sourceTree = "<group>"; };
 		99EF12F41B90CD3200FDFE9C /* VKCVKResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCVKResponse.m; sourceTree = "<group>"; };
-		99EF12F61B90CE2800FDFE9C /* VKCVKResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCVKResponseMapper.h; path = Mapper/ConcreteMapper/VKCVKResponseMapper.h; sourceTree = "<group>"; };
-		99EF12F71B90CE2800FDFE9C /* VKCVKResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCVKResponseMapper.m; path = Mapper/ConcreteMapper/VKCVKResponseMapper.m; sourceTree = "<group>"; };
+		99EF12F61B90CE2800FDFE9C /* VKCVKResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCVKResponseMapper.h; path = ../Mapper/VkIntermediateMapper/VKCVKResponseMapper.h; sourceTree = "<group>"; };
+		99EF12F71B90CE2800FDFE9C /* VKCVKResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCVKResponseMapper.m; path = ../Mapper/VkIntermediateMapper/VKCVKResponseMapper.m; sourceTree = "<group>"; };
 		99F873A21B89B4ED00BCD1A1 /* VKCDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCDataSource.h; path = Common/Data/VKCDataSource.h; sourceTree = "<group>"; };
 		99F873A31B89B50700BCD1A1 /* VKCPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCPlugin.h; path = Common/Data/VKCPlugin.h; sourceTree = "<group>"; };
 		99F873A61B89B61900BCD1A1 /* VKCProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCProcessor.h; path = Common/Data/VKCProcessor.h; sourceTree = "<group>"; };
 		99F873A71B89B6EB00BCD1A1 /* VKCNetworkSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCNetworkSource.h; path = Source/VKCNetworkSource.h; sourceTree = "<group>"; };
 		99F873A81B89B6EB00BCD1A1 /* VKCNetworkSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCNetworkSource.m; path = Source/VKCNetworkSource.m; sourceTree = "<group>"; };
-		99F873AA1B89CAC100BCD1A1 /* VKCJSONWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCJSONWrapper.h; sourceTree = "<group>"; };
-		99F873AB1B89CAC100BCD1A1 /* VKCJSONWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCJSONWrapper.m; sourceTree = "<group>"; };
 		99F873AE1B89D0C600BCD1A1 /* VKCFriendsProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCFriendsProcessor.h; path = Processor/VKCFriendsProcessor.h; sourceTree = "<group>"; };
 		99F873AF1B89D0C600BCD1A1 /* VKCFriendsProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCFriendsProcessor.m; path = Processor/VKCFriendsProcessor.m; sourceTree = "<group>"; };
 		99F873B11B89D29400BCD1A1 /* VKCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCUser.h; sourceTree = "<group>"; };
 		99F873B21B89D29400BCD1A1 /* VKCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCUser.m; sourceTree = "<group>"; };
-		99F93A431B8F3CCD00521F0F /* VKCMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCMapper.h; path = Mapper/Base/VKCMapper.h; sourceTree = "<group>"; };
-		99F93A451B8F3E0900521F0F /* VKCObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCObjectMapper.h; path = Mapper/Common/VKCObjectMapper.h; sourceTree = "<group>"; };
-		99F93A461B8F3E0900521F0F /* VKCObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCObjectMapper.m; path = Mapper/Common/VKCObjectMapper.m; sourceTree = "<group>"; };
-		99F93A481B8F487200521F0F /* VKCNumberMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCNumberMapper.h; path = Mapper/Common/VKCNumberMapper.h; sourceTree = "<group>"; };
-		99F93A491B8F487200521F0F /* VKCNumberMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCNumberMapper.m; path = Mapper/Common/VKCNumberMapper.m; sourceTree = "<group>"; };
-		99F93A4B1B8F4B5B00521F0F /* VKCBoolMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCBoolMapper.h; path = Mapper/Common/VKCBoolMapper.h; sourceTree = "<group>"; };
-		99F93A4C1B8F4B5B00521F0F /* VKCBoolMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCBoolMapper.m; path = Mapper/Common/VKCBoolMapper.m; sourceTree = "<group>"; };
+		99F93A431B8F3CCD00521F0F /* VKCMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCMapper.h; sourceTree = "<group>"; };
+		99F93A451B8F3E0900521F0F /* VKCObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCObjectMapper.h; sourceTree = "<group>"; };
+		99F93A461B8F3E0900521F0F /* VKCObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCObjectMapper.m; sourceTree = "<group>"; };
 		99FF42841B9097C2006CBD62 /* VKCCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCCredentials.h; path = Api/VKCCredentials.h; sourceTree = "<group>"; };
 		99FF42851B9097C2006CBD62 /* VKCCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCCredentials.m; path = Api/VKCCredentials.m; sourceTree = "<group>"; };
 		99FF42871B909B27006CBD62 /* VKCCredentialsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCCredentialsUtil.h; path = Util/VKCCredentialsUtil.h; sourceTree = "<group>"; };
@@ -183,10 +177,6 @@
 			children = (
 				999182A71B8F90C100DE3FC0 /* VKCUserMapper.h */,
 				999182A81B8F90C100DE3FC0 /* VKCUserMapper.m */,
-				997514FB1B9058F6001F8078 /* VKCVKArrayWrapMapper.h */,
-				997514FC1B9058F6001F8078 /* VKCVKArrayWrapMapper.m */,
-				99EF12F61B90CE2800FDFE9C /* VKCVKResponseMapper.h */,
-				99EF12F71B90CE2800FDFE9C /* VKCVKResponseMapper.m */,
 			);
 			name = ConcreteMapper;
 			sourceTree = "<group>";
@@ -194,26 +184,30 @@
 		997514F91B9055F6001F8078 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				997514F21B904B7F001F8078 /* VKCMapperItem.h */,
-				997514F31B904B7F001F8078 /* VKCMapperItem.m */,
-				99F93A431B8F3CCD00521F0F /* VKCMapper.h */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		997514FA1B90573E001F8078 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				99F93A451B8F3E0900521F0F /* VKCObjectMapper.h */,
-				99F93A461B8F3E0900521F0F /* VKCObjectMapper.m */,
-				99F93A481B8F487200521F0F /* VKCNumberMapper.h */,
-				99F93A491B8F487200521F0F /* VKCNumberMapper.m */,
-				99F93A4B1B8F4B5B00521F0F /* VKCBoolMapper.h */,
-				99F93A4C1B8F4B5B00521F0F /* VKCBoolMapper.m */,
 				9958CEAF1B8F54E000B34AA6 /* VKCArrayMapper.h */,
 				9958CEB01B8F54E000B34AA6 /* VKCArrayMapper.m */,
+				99F93A431B8F3CCD00521F0F /* VKCMapper.h */,
+				997514F21B904B7F001F8078 /* VKCMapperItem.h */,
+				997514F31B904B7F001F8078 /* VKCMapperItem.m */,
+				99F93A451B8F3E0900521F0F /* VKCObjectMapper.h */,
+				99F93A461B8F3E0900521F0F /* VKCObjectMapper.m */,
 			);
-			name = Common;
+			name = Base;
+			path = Mapper/Base;
+			sourceTree = "<group>";
+		};
+		997514FA1B90573E001F8078 /* VkIntermediateMapper */ = {
+			isa = PBXGroup;
+			children = (
+				997514FB1B9058F6001F8078 /* VKCVKArrayWrapMapper.h */,
+				997514FC1B9058F6001F8078 /* VKCVKArrayWrapMapper.m */,
+				99EF12F61B90CE2800FDFE9C /* VKCVKResponseMapper.h */,
+				99EF12F71B90CE2800FDFE9C /* VKCVKResponseMapper.m */,
+				99C1EDB61B91BDC500D6AE5C /* VKCVKBatchMapper.h */,
+				99C1EDB71B91BDC500D6AE5C /* VKCVKBatchMapper.m */,
+			);
+			name = VkIntermediateMapper;
+			path = VkIntermediateModel;
 			sourceTree = "<group>";
 		};
 		997515011B90615F001F8078 /* Util */ = {
@@ -285,23 +279,29 @@
 		999FE6D81B7D1BF40045EDB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99C1EDB51B91BB3900D6AE5C /* VkIntermediateModel */,
 				99F93A441B8F3D7C00521F0F /* Mapper */,
 				998249061B7DF66A00131A26 /* VKCCity.h */,
 				998249071B7DF66A00131A26 /* VKCCity.m */,
-				99F873AA1B89CAC100BCD1A1 /* VKCJSONWrapper.h */,
-				99F873AB1B89CAC100BCD1A1 /* VKCJSONWrapper.m */,
 				999A58B91B8EEEC000FC16B6 /* VKCMessage.h */,
 				999A58BA1B8EEEC000FC16B6 /* VKCMessage.m */,
 				998249031B7DE99A00131A26 /* VKCPolygon.h */,
 				998249041B7DE99A00131A26 /* VKCPolygon.m */,
 				99F873B11B89D29400BCD1A1 /* VKCUser.h */,
 				99F873B21B89D29400BCD1A1 /* VKCUser.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99C1EDB51B91BB3900D6AE5C /* VkIntermediateModel */ = {
+			isa = PBXGroup;
+			children = (
 				997514FE1B9059FC001F8078 /* VKCVKArrayWrap.h */,
 				997514FF1B9059FC001F8078 /* VKCVKArrayWrap.m */,
 				99EF12F31B90CD3200FDFE9C /* VKCVKResponse.h */,
 				99EF12F41B90CD3200FDFE9C /* VKCVKResponse.m */,
 			);
-			path = Model;
+			path = VkIntermediateModel;
 			sourceTree = "<group>";
 		};
 		99E53CBE1B7CD4F3007F1231 = {
@@ -391,7 +391,7 @@
 		99F93A441B8F3D7C00521F0F /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				997514FA1B90573E001F8078 /* Common */,
+				997514FA1B90573E001F8078 /* VkIntermediateMapper */,
 				997514F91B9055F6001F8078 /* Base */,
 				997514F51B9051DE001F8078 /* ConcreteMapper */,
 			);
@@ -508,11 +508,8 @@
 				99572BE51B8C4A7800245156 /* VKCAsyncTask.m in Sources */,
 				99EF12F51B90CD3200FDFE9C /* VKCVKResponse.m in Sources */,
 				999182A91B8F90C100DE3FC0 /* VKCUserMapper.m in Sources */,
-				99F93A4A1B8F487200521F0F /* VKCNumberMapper.m in Sources */,
 				99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */,
 				99FF42891B909B27006CBD62 /* VKCCredentialsUtil.m in Sources */,
-				99F93A4D1B8F4B5B00521F0F /* VKCBoolMapper.m in Sources */,
-				99F873AC1B89CAC100BCD1A1 /* VKCJSONWrapper.m in Sources */,
 				997514F41B904B7F001F8078 /* VKCMapperItem.m in Sources */,
 				998249081B7DF66A00131A26 /* VKCCity.m in Sources */,
 				99EF12F81B90CE2800FDFE9C /* VKCVKResponseMapper.m in Sources */,
@@ -526,6 +523,7 @@
 				99FF42861B9097C2006CBD62 /* VKCCredentials.m in Sources */,
 				99E53CCD1B7CD4F3007F1231 /* main.m in Sources */,
 				999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */,
+				99C1EDB81B91BDC500D6AE5C /* VKCVKBatchMapper.m in Sources */,
 				996966651B88EAD80092BCEA /* VKCFriendsTableViewController.m in Sources */,
 				99E53CD31B7CD4F3007F1231 /* VkClient.xcdatamodeld in Sources */,
 				998249011B7DD82D00131A26 /* ViewController.m in Sources */,

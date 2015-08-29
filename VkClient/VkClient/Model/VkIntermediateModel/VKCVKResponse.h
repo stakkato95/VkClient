@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VKCVKArrayWrap.h"
 
 @interface VKCVKResponse : NSObject
 
-@property NSDictionary *responseWrapper;
+@property VKCVKArrayWrap *response;
 
 @end

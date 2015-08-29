@@ -15,6 +15,6 @@
 
 @interface VKCVKResponseMapper : NSObject <VKCMapper>
 
-+ (instancetype)mapperWithVkArrayWrapMapper:(VKCVKArrayWrapMapper *)vkArrayMapper;
++ (instancetype)vkResponseMapperWithVkArrayWrapMapper:(VKCVKArrayWrapMapper *)vkArrayMapper;
 
 @end

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VKCJSONWrapper.h"
+#import "VKCIdentifiable.h"
 
-@interface VKCUser : VKCJSONWrapper
+@interface VKCUser : NSObject <VKCIdentifiable>
 
 @property (readonly) NSString *firstName;
 @property (readonly) NSString *lastName;

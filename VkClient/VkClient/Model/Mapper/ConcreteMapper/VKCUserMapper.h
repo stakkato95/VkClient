@@ -10,12 +10,7 @@
 #import "VKCJSONConstants.h"
 #import "VKCUser.h"
 #import "VKCMapper.h"
-#import "VKCNumberMapper.h"
-#import "VKCBoolMapper.h"
-#import "VKCVKArrayWrapMapper.h"
-#import "VKCObjectMapper.h"
-#import "VKCVKResponseMapper.h"
-#import "VKCArrayMapper.h"
+#import "VKCVKBatchMapper.h"
 
 @interface VKCUserMapper : NSObject <VKCMapper>
 

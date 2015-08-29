@@ -11,6 +11,7 @@
 #import "VKCUser.h"
 #import "VKCUserMapper.h"
 #import "VKCSingleton.h"
+#import "VKCVKResponse.h"
 
 @interface VKCFriendsProcessor : NSObject <VKCProcessor, VKCSingleton>
 

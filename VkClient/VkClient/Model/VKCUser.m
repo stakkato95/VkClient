@@ -10,7 +10,7 @@
 
 @implementation VKCUser
 
-
+@synthesize identifier;
 
 #pragma mark - Initializers
 

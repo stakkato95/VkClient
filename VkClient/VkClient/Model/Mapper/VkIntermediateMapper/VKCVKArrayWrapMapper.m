@@ -15,7 +15,7 @@
     
 }
 
-+ (instancetype)arrayWrapMapperWithArrayMapper:(id<VKCMapper>)modelMapper {
++ (instancetype)vkArrayWrapMapperWithArrayMapper:(id<VKCMapper>)modelMapper {
     VKCVKArrayWrapMapper *arrayMapper = [[VKCVKArrayWrapMapper alloc] init];
     arrayMapper->modelMapper = modelMapper;
     return arrayMapper;

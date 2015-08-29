@@ -15,6 +15,6 @@
 
 @interface VKCVKArrayWrapMapper : NSObject <VKCMapper>
 
-+ (instancetype)arrayWrapMapperWithArrayMapper:(id<VKCMapper>)modelMapper;
++ (instancetype)vkArrayWrapMapperWithArrayMapper:(id<VKCMapper>)modelMapper;
 
 @end

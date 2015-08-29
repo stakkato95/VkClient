@@ -10,4 +10,11 @@
 
 @implementation VKCVKArrayWrap
 
+- (BOOL)validateItems:(id *)ioValue error:(NSError *__autoreleasing *)outError {
+    if (ioValue && [*ioValue isKindOfClass:[NSArray class]]) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

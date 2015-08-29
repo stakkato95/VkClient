@@ -42,7 +42,9 @@
         }
         
         if (propertyValue) {
-            [endObject setValue:propertyValue forKey:propertyName];
+            if ([endObject validateValue:&propertyValue forKey:propertyName error:&error]) {
+                [endObject setValue:propertyValue forKey:propertyName];
+            }
         }
     }
     

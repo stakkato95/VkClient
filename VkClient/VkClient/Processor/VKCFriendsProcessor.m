@@ -23,7 +23,8 @@
     if (jsonData) {
         NSDictionary *preparedJson = [[VKCJSONSerializationUtil sharedInstance] serialize:jsonData error:error];
         if (error == noErr) {
-            friendsArray = [[[VKCUserMapper alloc] init] mapFromSourceObject:preparedJson error:error];
+            VKCVKResponse *vkResponse = [[[VKCUserMapper alloc] init] mapFromSourceObject:preparedJson error:error];
+            friendsArray = vkResponse.response.items;
             if (error != noErr) {
                 return nil;
             }
