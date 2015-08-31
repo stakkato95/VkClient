@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VKCSingleton.h"
 #import "VKCCredentials.h"
-#import "NSStringAdditions.h"
+#import "NSString+StringAdditions.h"
 #import "VKCApi.h"
 
 @interface VKCCredentialsUtil : NSObject <VKCSingleton>

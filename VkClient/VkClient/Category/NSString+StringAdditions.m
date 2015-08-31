@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Artsiom Kaliaha. All rights reserved.
 //
 
-#import "NSStringAdditions.h"
+#import "NSString+StringAdditions.h"
 
-@implementation NSString (NSStringAdditions)
+@implementation NSString (StringAdditions)
 
 NSString * const EMPTY_STRING = @"";
 char const WHITE_SPACE_CHAR = ' ';

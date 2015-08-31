@@ -20,18 +20,20 @@
     
 }
 
-
 #pragma mark - Default methods
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self->plugins = [[NSMutableDictionary alloc] init];
-    [self registerPlugin:[VKCNetworkSource sharedInstance]];
-    [self registerPlugin:[VKCFriendsProcessor sharedInstance]];
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self->plugins = [[NSMutableDictionary alloc] init];
+    [self registerPlugin:[VKCNetworkSource sharedInstance]];
+    [self registerPlugin:[VKCFriendsProcessor sharedInstance]];
+    
+    [NSURLCache setSharedURLCache:[[NSURLCache alloc] initWithMemoryCapacity:URL_CACHE_MEMORY_CAPACITY
+                                                                diskCapacity:URL_CACHE_DISK_CAPACITY
+                                                                    diskPath:URL_CACHE_DISK_PATH]];
     return YES;
 }
 
@@ -58,6 +60,7 @@
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
+
 
 #pragma mark - Core Data stack
 

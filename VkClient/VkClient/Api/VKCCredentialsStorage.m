@@ -8,7 +8,7 @@
 
 #import <Security/Security.h>
 #import "VKCCredentialsStorage.h"
-#import "NSStringAdditions.h"
+#import "NSString+StringAdditions.h"
 #import "VKCApi.h"
 
 @implementation VKCCredentialsStorage {

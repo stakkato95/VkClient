@@ -39,27 +39,6 @@ static NSString * const ACCESS_TOKEN = @"access_token";
 static NSString * const METHOD_PATH = @"https://api.vk.com/method/%@.%@?";
 
 
-#pragma mark - Method types
-
-static NSString * const METHOD_TYPE = @"method_type";
-static NSString * const METHOD_GET = @"get";
-
-
-#pragma mark - Data types
-
-static NSString * const DATA_TYPE = @"data_type";
-static NSString * const DATA_FRIENDS = @"friends";
-
-
-#pragma mark - Parameters Constants
-
-static NSString * const ORDER = @"order";
-static NSString * const ORDER_NAME = @"name";
-
-static NSString * const FIELDS = @"fields";
-static NSString * const FIELDS_ONLINE = @"online";
-
-
 #pragma mark - Public methods
 
 + (instancetype)sharedInstance {
@@ -92,12 +71,14 @@ static NSString * const FIELDS_ONLINE = @"online";
 }
 
 
+#pragma mark - Get content methods
+
 - (void)getFriends:(id<VKCCallback>)callback {
     NSString *requestString = [self prepareRequestString:[NSMutableDictionary dictionaryWithDictionary:@{METHOD_TYPE : METHOD_GET,
                                                                                                          DATA_TYPE : DATA_FRIENDS,
                                                                                                          USER_ID : credentials.userId,
                                                                                                          ORDER : ORDER_NAME,
-                                                                                                         FIELDS : FIELDS_ONLINE}]];
+                                                                                                         FIELD : @[FIELD_ONLINE, PHOTO_100]}]];
     
     AppDelegate *application = [[UIApplication sharedApplication] delegate];
     [application requestWithDataSource:[[VKCNetworkSource sharedInstance] getName] processor:[[VKCFriendsProcessor sharedInstance] getName] param:requestString callback:callback];
@@ -120,7 +101,17 @@ static NSString * const FIELDS_ONLINE = @"online";
     
     [requestString appendFormat:METHOD_PATH, dataType, methodType];
     [headersMap enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [requestString appendFormat:@"%@=%@&", key, obj];
+        if ([obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSMutableArray class]]) {
+            //multiple values for a key
+            [requestString appendFormat:@"%@=", key];
+            for (int i = 0; i < ((NSArray *)obj).count; i++) {
+                [requestString appendFormat:@"%@,", obj[i]];
+            }
+            [requestString replaceCharactersInRange:NSMakeRange(requestString.length - 1, 1) withString:@"&"];
+        } else {
+            //single value for a key
+            [requestString appendFormat:@"%@=%@&", key, obj];
+        }
     }];
     [requestString appendFormat:@"v=%.2f&%@=%@", API_VERSION, ACCESS_TOKEN, self->credentials.token];
     

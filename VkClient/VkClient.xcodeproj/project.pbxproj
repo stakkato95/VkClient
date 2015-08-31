@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		990180041B8619CF0083A923 /* VKCCredentialsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 990180031B8619CF0083A923 /* VKCCredentialsStorage.m */; };
+		991602E71B9359970017DA1E /* UIImageView+ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 991602E61B9359970017DA1E /* UIImageView+ImageLoader.m */; };
 		991A885A1B80862300383566 /* VKCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991A88591B80862300383566 /* VKCWebViewController.m */; };
 		991E0E761B8255F40047CC89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991E0E751B8255F40047CC89 /* Localizable.strings */; };
 		99572BE51B8C4A7800245156 /* VKCAsyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 99572BE41B8C4A7800245156 /* VKCAsyncTask.m */; };
@@ -24,7 +25,7 @@
 		999182A91B8F90C100DE3FC0 /* VKCUserMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 999182A81B8F90C100DE3FC0 /* VKCUserMapper.m */; };
 		999A58BB1B8EEEC000FC16B6 /* VKCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 999A58BA1B8EEEC000FC16B6 /* VKCMessage.m */; };
 		999DE1121B7E30BD00FF3912 /* VKCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1111B7E30BD00FF3912 /* VKCApi.m */; };
-		999DE1191B7E5D7600FF3912 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */; };
+		999DE1191B7E5D7600FF3912 /* NSString+StringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DE1181B7E5D7600FF3912 /* NSString+StringAdditions.m */; };
 		99C1EDB81B91BDC500D6AE5C /* VKCVKBatchMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C1EDB71B91BDC500D6AE5C /* VKCVKBatchMapper.m */; };
 		99E53CCD1B7CD4F3007F1231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CCC1B7CD4F3007F1231 /* main.m */; };
 		99E53CD01B7CD4F3007F1231 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E53CCF1B7CD4F3007F1231 /* AppDelegate.m */; };
@@ -56,6 +57,8 @@
 /* Begin PBXFileReference section */
 		990180021B8619CF0083A923 /* VKCCredentialsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCCredentialsStorage.h; path = Api/VKCCredentialsStorage.h; sourceTree = "<group>"; };
 		990180031B8619CF0083A923 /* VKCCredentialsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCCredentialsStorage.m; path = Api/VKCCredentialsStorage.m; sourceTree = "<group>"; };
+		991602E51B9359970017DA1E /* UIImageView+ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ImageLoader.h"; sourceTree = "<group>"; };
+		991602E61B9359970017DA1E /* UIImageView+ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ImageLoader.m"; sourceTree = "<group>"; };
 		991A88581B80862300383566 /* VKCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCWebViewController.h; path = Controller/VKCWebViewController.h; sourceTree = "<group>"; };
 		991A88591B80862300383566 /* VKCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCWebViewController.m; path = Controller/VKCWebViewController.m; sourceTree = "<group>"; };
 		991E0E751B8255F40047CC89 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resource/Localizable.strings; sourceTree = "<group>"; };
@@ -92,8 +95,8 @@
 		999A58BA1B8EEEC000FC16B6 /* VKCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCMessage.m; sourceTree = "<group>"; };
 		999DE1101B7E30BD00FF3912 /* VKCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCApi.h; path = Api/VKCApi.h; sourceTree = "<group>"; };
 		999DE1111B7E30BD00FF3912 /* VKCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCApi.m; path = Api/VKCApi.m; sourceTree = "<group>"; };
-		999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
-		999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		999DE1171B7E5D7600FF3912 /* NSString+StringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringAdditions.h"; sourceTree = "<group>"; };
+		999DE1181B7E5D7600FF3912 /* NSString+StringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringAdditions.m"; sourceTree = "<group>"; };
 		99C1EDB61B91BDC500D6AE5C /* VKCVKBatchMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKCVKBatchMapper.h; path = ../Mapper/VkIntermediateMapper/VKCVKBatchMapper.h; sourceTree = "<group>"; };
 		99C1EDB71B91BDC500D6AE5C /* VKCVKBatchMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKCVKBatchMapper.m; path = ../Mapper/VkIntermediateMapper/VKCVKBatchMapper.m; sourceTree = "<group>"; };
 		99E53CC71B7CD4F3007F1231 /* VkClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,8 +255,10 @@
 		999DE1131B7E5CFB00FF3912 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				999DE1171B7E5D7600FF3912 /* NSStringAdditions.h */,
-				999DE1181B7E5D7600FF3912 /* NSStringAdditions.m */,
+				999DE1171B7E5D7600FF3912 /* NSString+StringAdditions.h */,
+				999DE1181B7E5D7600FF3912 /* NSString+StringAdditions.m */,
+				991602E51B9359970017DA1E /* UIImageView+ImageLoader.h */,
+				991602E61B9359970017DA1E /* UIImageView+ImageLoader.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -514,7 +519,7 @@
 				998249081B7DF66A00131A26 /* VKCCity.m in Sources */,
 				99EF12F81B90CE2800FDFE9C /* VKCVKResponseMapper.m in Sources */,
 				99F93A471B8F3E0900521F0F /* VKCObjectMapper.m in Sources */,
-				999DE1191B7E5D7600FF3912 /* NSStringAdditions.m in Sources */,
+				999DE1191B7E5D7600FF3912 /* NSString+StringAdditions.m in Sources */,
 				997515001B9059FC001F8078 /* VKCVKArrayWrap.m in Sources */,
 				999A58BB1B8EEEC000FC16B6 /* VKCMessage.m in Sources */,
 				99F873B31B89D29400BCD1A1 /* VKCUser.m in Sources */,
@@ -528,6 +533,7 @@
 				99E53CD31B7CD4F3007F1231 /* VkClient.xcdatamodeld in Sources */,
 				998249011B7DD82D00131A26 /* ViewController.m in Sources */,
 				99F873B01B89D0C600BCD1A1 /* VKCFriendsProcessor.m in Sources */,
+				991602E71B9359970017DA1E /* UIImageView+ImageLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

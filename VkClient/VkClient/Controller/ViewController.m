@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "VKCPolygon.h"
-#import "NSStringAdditions.h"
+#import "NSString+StringAdditions.h"
 #import "VKCBlocks.h"
 
 @interface ViewController ()

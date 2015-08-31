@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VKCCallback.h"
 #import "VKCApi.h"
+#import "UIImageView+ImageLoader.h"
 
 @interface VKCFriendsTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, VKCCallback>
 

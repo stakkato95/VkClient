@@ -14,6 +14,7 @@
 #import "VKCCredentialsStorage.h"
 #import "VKCCredentials.h"
 #import "VKCCredentialsUtil.h"
+#import "VKCJSONConstants.h"
 
 @interface VKCApi : NSObject <VKCSingleton>
 
@@ -23,8 +24,11 @@ extern NSString * const EXPIRES_IN;
 extern NSString * const USER_ID;
 
 - (NSURLRequest *)getOAuthRequest;
+
 - (BOOL)checkForToken:(NSURLRequest *)urlRequest;
+
 - (void)setCredentials:(VKCCredentials *)aCredentials;
+
 - (void)getFriends:(id<VKCCallback>)callback;
 
 @end

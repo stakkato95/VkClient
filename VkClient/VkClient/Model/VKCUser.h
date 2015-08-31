@@ -13,6 +13,8 @@
 
 @property (readonly) NSString *firstName;
 @property (readonly) NSString *lastName;
+@property (readonly) NSString *photo100;
 @property (readonly) BOOL online;
+//TODO: ADD PROPERTY FULLNAME
 
 @end

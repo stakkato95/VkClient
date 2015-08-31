@@ -23,4 +23,29 @@ NSString * const FIRST_NAME = @"first_name";
 NSString * const LAST_NAME = @"last_name";
 NSString * const ONLINE = @"online";
 
+#pragma mark - Photo sizes
+
+NSString * const PHOTO_100 = @"photo_100";
+
+
+#pragma mark - Method types
+
+NSString * const METHOD_TYPE = @"method_type";
+NSString * const METHOD_GET = @"get";
+
+
+#pragma mark - Data types
+
+NSString * const DATA_TYPE = @"data_type";
+NSString * const DATA_FRIENDS = @"friends";
+
+
+#pragma mark - Parameters Constants
+
+NSString * const ORDER = @"order";
+NSString * const ORDER_NAME = @"name";
+
+NSString * const FIELD = @"fields";
+NSString * const FIELD_ONLINE = @"online";
+
 @end
