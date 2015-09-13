@@ -26,6 +26,7 @@ NSString * const URL_CACHE_DISK_PATH = @"URLCache";
 
 #pragma mark - Variables
 
+static NSURLSession *session;
 static NSMutableDictionary *currentlyLoadedImages;
 static NSURLSessionConfiguration *sessionConfiguration;
 static void (^completionHandler)(NSData *data, NSURLResponse *response, NSError *error);
@@ -52,6 +53,7 @@ static void (^completionHandler)(NSData *data, NSURLResponse *response, NSError 
         currentlyLoadedImages = [[NSMutableDictionary alloc] init];
         sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         sessionConfiguration.timeoutIntervalForResource = 15; //wait resource for 15 secs
+        session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:nil delegateQueue:nil];
         completionHandler = ^(NSData *data, NSURLResponse *response, NSError *error) {
             int responseStatusCode = ((NSHTTPURLResponse *)response).statusCode;
             if (!error && responseStatusCode >= HTTP_STATUS_CODE_OK && responseStatusCode <= HTTP_STATUS_CODE_MULTIPLE_CHOICES) {
@@ -67,9 +69,8 @@ static void (^completionHandler)(NSData *data, NSURLResponse *response, NSError 
 }
 
 - (void)prepareSessionAndLoad:(NSString *)imageURL {
-    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:nil delegateQueue:nil]; //[NSOperationQueue mainQueue] - completion blocks will be executed at main thread
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
-    [[urlSession dataTaskWithRequest:request completionHandler:completionHandler] resume];
+    [[session dataTaskWithRequest:request completionHandler:completionHandler] resume];
 }
 
 

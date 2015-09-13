@@ -23,9 +23,9 @@
 }
 
 static NSString * const CELL_ID = @"friendsTableViewCell";
-static int const FRIEND_NAME_TAG = 0;
-static int const STATUS_TAG = 1;
-static int const IMAGE_TAG = 2;
+static int const FRIEND_NAME_TAG = 100;
+static int const STATUS_TAG = 200;
+static int const IMAGE_TAG = 300;
 
 
 - (void)viewDidLoad {
@@ -54,7 +54,12 @@ static int const IMAGE_TAG = 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_ID];
+    }
+    
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:FRIEND_NAME_TAG];
     UILabel *statusLabel = (UILabel *)[cell viewWithTag:STATUS_TAG];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
