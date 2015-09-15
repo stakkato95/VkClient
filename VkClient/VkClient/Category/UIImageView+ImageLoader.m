@@ -13,8 +13,8 @@
 #pragma mark - Constants
 #pragma mark - Session
 
-static int HTTP_STATUS_CODE_OK = 200;
-static int HTTP_STATUS_CODE_MULTIPLE_CHOICES = 300;
+static long HTTP_STATUS_CODE_OK = 200;
+static long HTTP_STATUS_CODE_MULTIPLE_CHOICES = 300;
 
 #pragma mark - Cache
 
@@ -55,9 +55,12 @@ static void (^completionHandler)(NSData *data, NSURLResponse *response, NSError 
         sessionConfiguration.timeoutIntervalForResource = 15; //wait resource for 15 secs
         session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:nil delegateQueue:nil];
         completionHandler = ^(NSData *data, NSURLResponse *response, NSError *error) {
-            int responseStatusCode = ((NSHTTPURLResponse *)response).statusCode;
+            long responseStatusCode = ((NSHTTPURLResponse *)response).statusCode;
             if (!error && responseStatusCode >= HTTP_STATUS_CODE_OK && responseStatusCode <= HTTP_STATUS_CODE_MULTIPLE_CHOICES) {
-                UIImageView *imageView = (UIImageView *)[currentlyLoadedImages objectForKey:response.URL.description];
+                NSString *imageUrl = response.URL.description;
+                UIImageView *imageView = (UIImageView *)[currentlyLoadedImages objectForKey:imageUrl];
+                [currentlyLoadedImages removeObjectForKey:imageUrl];
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
                     imageView.image = [UIImage imageWithData:data];
                 });
@@ -72,25 +75,5 @@ static void (^completionHandler)(NSData *data, NSURLResponse *response, NSError 
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
     [[session dataTaskWithRequest:request completionHandler:completionHandler] resume];
 }
-
-
-//#pragma mark - NSURLSessionTaskDelegate methods
-//
-//- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
-//    int responseStatusCode = ((NSHTTPURLResponse *)dataTask.response).statusCode;
-//    if (responseStatusCode >= HTTP_STATUS_CODE_OK && responseStatusCode <= HTTP_STATUS_CODE_MULTIPLE_CHOICES) {
-//        UIImageView *imageView = (UIImageView *)[currentlyLoadedImages objectForKey:dataTask.response.URL];
-//        imageView.image = [UIImage imageWithData:data];
-//    }
-//}
-//
-//- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
-//    if (!error) {
-//        [currentlyLoadedImages removeObjectForKey:task.originalRequest.URL];
-//    } else {
-//        [task ]
-//    }
-//}
-
 
 @end

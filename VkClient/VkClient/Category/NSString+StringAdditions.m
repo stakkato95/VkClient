@@ -32,7 +32,7 @@ char const WHITE_SPACE_CHAR = ' ';
 
 - (NSString *)vkc_trimStringBetween:(NSString *)start and:(NSString *)end {
     NSRange startRange = [self rangeOfString:start];
-    int secondRangeStart = startRange.location + startRange.length;
+    NSUInteger secondRangeStart = startRange.location + startRange.length;
     NSRange secondSubstringRange = NSMakeRange(secondRangeStart, self.length - secondRangeStart);
     
     NSRange endRange;

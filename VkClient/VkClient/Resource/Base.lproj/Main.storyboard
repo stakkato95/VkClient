@@ -96,7 +96,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNz-Ln-WwH">
-                                                    <rect key="frame" x="104" y="8" width="118" height="25"/>
+                                                    <rect key="frame" x="104" y="8" width="480" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="1Nz-Rb-Wbi"/>
                                                         <constraint firstAttribute="width" constant="118" id="zRC-UO-sft"/>
@@ -111,7 +111,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsZ-Pi-gTj">
-                                                    <rect key="frame" x="104" y="37" width="50" height="21"/>
+                                                    <rect key="frame" x="104" y="37" width="480" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="mjN-Vg-YZ7"/>
                                                         <constraint firstAttribute="width" constant="50" id="zCX-4u-Xbk"/>
@@ -127,6 +127,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DNz-Ln-WwH" secondAttribute="trailing" constant="8" id="0zg-jx-5WE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BsZ-Pi-gTj" secondAttribute="trailing" constant="8" id="2Xl-pa-FbM"/>
                                                 <constraint firstItem="5H9-DO-nm9" firstAttribute="top" secondItem="WKs-8o-Fk7" secondAttribute="top" constant="8" id="9cQ-gA-ADu"/>
                                                 <constraint firstItem="DNz-Ln-WwH" firstAttribute="trailing" secondItem="5H9-DO-nm9" secondAttribute="trailing" constant="8" id="HMK-lw-k40"/>
                                                 <constraint firstItem="5H9-DO-nm9" firstAttribute="bottom" secondItem="DNz-Ln-WwH" secondAttribute="bottom" constant="54" id="Jib-5a-QaF"/>

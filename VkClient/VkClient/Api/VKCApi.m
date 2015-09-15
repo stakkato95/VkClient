@@ -78,7 +78,7 @@ static NSString * const METHOD_PATH = @"https://api.vk.com/method/%@.%@?";
                                                                                                          DATA_TYPE : DATA_FRIENDS,
                                                                                                          USER_ID : credentials.userId,
                                                                                                          ORDER : ORDER_NAME,
-                                                                                                         FIELD : @[FIELD_ONLINE, PHOTO_100]}]];
+                                                                                                         FIELD : @[FIELD_ONLINE, FIELD_STATUS, PHOTO_100]}]];
     
     AppDelegate *application = [[UIApplication sharedApplication] delegate];
     [application requestWithDataSource:[[VKCNetworkSource sharedInstance] getName] processor:[[VKCFriendsProcessor sharedInstance] getName] param:requestString callback:callback];

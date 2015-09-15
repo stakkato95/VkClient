@@ -66,7 +66,7 @@ static int const IMAGE_TAG = 300;
     
     VKCUser *friend = [friendsArray objectAtIndex:indexPath.row];
     nameLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
-    statusLabel.text = @"Status will be here";
+    statusLabel.text = friend.status;
     [imageView displayImageWithURL:friend.photo100];
     return cell;
 }

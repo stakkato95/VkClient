@@ -20,7 +20,7 @@ NSString * const ITEMS = @"items";
 
 NSString * const ID = @"id";
 NSString * const FIRST_NAME = @"first_name";
-NSString * const LAST_NAME = @"last_name";
+NSString * const LAST_NAME = @"last_name";//TODO: THE SAME
 NSString * const ONLINE = @"online";
 
 #pragma mark - Photo sizes
@@ -46,6 +46,7 @@ NSString * const ORDER = @"order";
 NSString * const ORDER_NAME = @"name";
 
 NSString * const FIELD = @"fields";
-NSString * const FIELD_ONLINE = @"online";
+NSString * const FIELD_ONLINE = @"online"; //TODO: THE SAME
+NSString * const FIELD_STATUS = @"status";
 
 @end

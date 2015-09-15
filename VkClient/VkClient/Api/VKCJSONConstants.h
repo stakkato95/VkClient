@@ -48,5 +48,6 @@ extern NSString * const ORDER_NAME;
 
 extern NSString * const FIELD;
 extern NSString * const FIELD_ONLINE;
+extern NSString * const FIELD_STATUS;
 
 @end
