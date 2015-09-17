@@ -16,24 +16,18 @@
 #import "VKCNetworkSource.h"
 #import "VKCFriendsProcessor.h"
 #import "UIImageView+ImageLoader.h"
+#import "VKCDataController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface VKCAppDelegate : UIResponder <UIApplicationDelegate>
 
 #pragma mark - Default properties & methods
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-- (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
 
 #pragma mark - Custom properties & methods
-
-- (void)registerPlugin:(id<VKCPlugin>)plugin;
 
 - (void)requestWithDataSource:(NSString *)sourceName
                     processor:(NSString *)processorName

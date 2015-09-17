@@ -229,7 +229,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="NVE-z5-p6T"/>
                     <connections>
                         <outlet property="activityIndicator" destination="gd5-TZ-Tgz" id="MAZ-Qe-PO9"/>
-                        <outlet property="tableView" destination="nfv-B8-UEt" id="pLr-vI-0wh"/>
+                        <outlet property="tableView" destination="nfv-B8-UEt" id="rJ2-j0-4ys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFE-qz-A2n" userLabel="First Responder" sceneMemberID="firstResponder"/>

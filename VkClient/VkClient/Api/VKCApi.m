@@ -80,7 +80,7 @@ static NSString * const METHOD_PATH = @"https://api.vk.com/method/%@.%@?";
                                                                                                          ORDER : ORDER_NAME,
                                                                                                          FIELD : @[FIELD_ONLINE, FIELD_STATUS, PHOTO_100]}]];
     
-    AppDelegate *application = [[UIApplication sharedApplication] delegate];
+    VKCAppDelegate *application = [[UIApplication sharedApplication] delegate];
     [application requestWithDataSource:[[VKCNetworkSource sharedInstance] getName] processor:[[VKCFriendsProcessor sharedInstance] getName] param:requestString callback:callback];
 }
 

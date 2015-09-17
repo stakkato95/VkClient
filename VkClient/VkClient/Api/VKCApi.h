@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AppDelegate.h"
+#import "VKCAppDelegate.h"
 #import "VKCSingleton.h"
 #import "VKCCallback.h"
 #import "VKCFriendsProcessor.h"

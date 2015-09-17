@@ -18,7 +18,7 @@
 @implementation VKCFriendsTableViewController {
     
     @private
-    NSArray *friendsArray;
+    NSArray<VKCUser *> *friendsArray;
     
 }
 
@@ -45,6 +45,12 @@ static int const IMAGE_TAG = 300;
 
 #pragma mark - Table view data source
 
+- (void)configureCell:(id)cell atIndexPath:(NSIndexPath*)indexPath {
+    //id object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    
+    // Populate cell from the NSManagedObject instance
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -59,6 +65,8 @@ static int const IMAGE_TAG = 300;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_ID];
     }
+    
+    [self configureCell:cell atIndexPath:indexPath]; //TODO: MOVE TO THIS LOGIC
     
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:FRIEND_NAME_TAG];
     UILabel *statusLabel = (UILabel *)[cell viewWithTag:STATUS_TAG];
