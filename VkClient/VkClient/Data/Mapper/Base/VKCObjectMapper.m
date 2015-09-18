@@ -42,6 +42,8 @@
         }
         
         if (propertyValue) {
+            
+            //TODO: CODE REFACTORING REQUIRED
             if ([endObject validateValue:&propertyValue forKey:propertyName error:&error]) {
                 [endObject setValue:propertyValue forKey:propertyName];
             }

@@ -12,7 +12,10 @@
 #import "VKCAppDelegate.h"
 #import "VKCSingleton.h"
 
-@interface VKCDataController : NSObject <VKCSingleton>
+@interface VKCCoreDataController : NSObject <VKCSingleton>
+
+@property NSManagedObjectContext *context;
+
 
 - (void)initCoreDataStack;
 

@@ -10,17 +10,18 @@
 
 @interface VKCFriendsTableViewController()
 
+#pragma mark - Outlets
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+#pragma mark - Internal properties
+
+@property NSArray *friendsArray;
+
 @end
 
-@implementation VKCFriendsTableViewController {
-    
-    @private
-    NSArray<VKCUser *> *friendsArray;
-    
-}
+@implementation VKCFriendsTableViewController
 
 static NSString * const CELL_ID = @"friendsTableViewCell";
 static int const FRIEND_NAME_TAG = 100;
@@ -56,7 +57,7 @@ static int const IMAGE_TAG = 300;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return friendsArray.count;
+    return self.friendsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,7 +73,7 @@ static int const IMAGE_TAG = 300;
     UILabel *statusLabel = (UILabel *)[cell viewWithTag:STATUS_TAG];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
     
-    VKCUser *friend = [friendsArray objectAtIndex:indexPath.row];
+    VKCUser *friend = [self.friendsArray objectAtIndex:indexPath.row];
     nameLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
     statusLabel.text = friend.status;
     [imageView displayImageWithURL:friend.photo100];
@@ -136,7 +137,9 @@ static int const IMAGE_TAG = 300;
     [self.activityIndicator stopAnimating];
     
     if (data) {
-        self->friendsArray = data;
+        [[VKCModelController sharedInstance] saveUsers:data];//TODO: JUST FOR TIME
+
+        self.friendsArray = data;
         [self.tableView reloadData];
     }
 }

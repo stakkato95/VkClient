@@ -6,15 +6,9 @@
 //  Copyright (c) 2015 Artsiom Kaliaha. All rights reserved.
 //
 
-#import "VKCDataController.h"
+#import "VKCCoreDataController.h"
 
-@interface VKCDataController ()
-
-@property NSManagedObjectContext *context;
-
-@end
-
-@implementation VKCDataController
+@implementation VKCCoreDataController
 
 #pragma mark - Constants
 
@@ -24,9 +18,9 @@ static NSString * const SQLITE_STORE_FILE = @"VkClientDatabase.sqlite";
 
 
 + (instancetype)sharedInstance {
-    static VKCDataController *instance = nil;
+    static VKCCoreDataController *instance = nil;
     static dispatch_once_t isDispatched;
-    dispatch_once(&isDispatched, ^{ instance = [[VKCDataController alloc] init]; });
+    dispatch_once(&isDispatched, ^{ instance = [[VKCCoreDataController alloc] init]; });
     return instance;
 }
 
@@ -39,6 +33,10 @@ static NSString * const SQLITE_STORE_FILE = @"VkClientDatabase.sqlite";
     if (self.context.hasChanges) {
         NSError *error = nil;
         [self.context save:&error];
+        
+        if (error) {
+            NSLog(@"%@", error.userInfo);
+        }
     }
 }
 
@@ -58,16 +56,16 @@ static NSString * const SQLITE_STORE_FILE = @"VkClientDatabase.sqlite";
 }
 
 - (void)setUpSQLiteStore:(NSPersistentStoreCoordinator *)storeCoordinator {
-    NSURL *sqliteStoreUrl = [[(VKCAppDelegate *)[UIApplication sharedApplication] applicationDocumentsDirectory] URLByAppendingPathComponent:SQLITE_STORE_FILE];
+    VKCAppDelegate *application = (VKCAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSURL *sqliteStoreUrl = [[application applicationDocumentsDirectory] URLByAppendingPathComponent:SQLITE_STORE_FILE];
     NSDictionary *sqliteStoreOptions = @{NSSQLiteAnalyzeOption : @YES,
                                          NSSQLiteManualVacuumOption : @YES};
     NSError *error = nil;
     NSPersistentStore *sqliteStore = [storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:sqliteStoreUrl options:sqliteStoreOptions error:&error];
     
-    NSAssert(YES, @"CRASH=)");//TODO: DELETE
-//    if (!sqliteStore) {
-//        NSAssert(YES, @"CRASH=)");
-//    }
+    if (error) {
+        NSLog(@"%@", error.userInfo);
+    }
 }
 
 @end

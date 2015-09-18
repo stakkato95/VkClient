@@ -31,7 +31,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setUpPlugins];
     [self setUpImageLoaderCache];
-    [[VKCDataController sharedInstance] initCoreDataStack];
+    [[VKCCoreDataController sharedInstance] initCoreDataStack];
     return YES;
 }
 
@@ -56,7 +56,9 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [[VKCDataController sharedInstance] commitChanges];
+    
+    //ensures that all the unsaved changes will be commited
+    [[VKCCoreDataController sharedInstance] commitChanges];
 }
 
 

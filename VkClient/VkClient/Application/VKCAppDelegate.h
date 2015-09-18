@@ -16,7 +16,7 @@
 #import "VKCNetworkSource.h"
 #import "VKCFriendsProcessor.h"
 #import "UIImageView+ImageLoader.h"
-#import "VKCDataController.h"
+#import "VKCcoreDataController.h"
 
 @interface VKCAppDelegate : UIResponder <UIApplicationDelegate>
 
