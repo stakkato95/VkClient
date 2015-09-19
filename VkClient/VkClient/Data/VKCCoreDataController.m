@@ -35,7 +35,7 @@ static NSString * const SQLITE_STORE_FILE = @"VkClientDatabase.sqlite";
         [self.context save:&error];
         
         if (error) {
-            NSLog(@"%@", error.userInfo);
+            NSLog(@"%@\n%@", error.userInfo, error.localizedDescription);
         }
     }
 }
@@ -61,7 +61,7 @@ static NSString * const SQLITE_STORE_FILE = @"VkClientDatabase.sqlite";
     NSDictionary *sqliteStoreOptions = @{NSSQLiteAnalyzeOption : @YES,
                                          NSSQLiteManualVacuumOption : @YES};
     NSError *error = nil;
-    NSPersistentStore *sqliteStore = [storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:sqliteStoreUrl options:sqliteStoreOptions error:&error];
+    [storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:sqliteStoreUrl options:sqliteStoreOptions error:&error];
     
     if (error) {
         NSLog(@"%@", error.userInfo);

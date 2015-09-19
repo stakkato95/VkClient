@@ -10,33 +10,23 @@
 
 @interface VKCFriendsTableViewController()
 
-#pragma mark - Outlets
-
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-#pragma mark - Internal properties
-
+@property UIActivityIndicatorView *activityIndicator;
 @property NSArray *friendsArray;
 
 @end
 
 @implementation VKCFriendsTableViewController
 
-static NSString * const CELL_ID = @"friendsTableViewCell";
-static int const FRIEND_NAME_TAG = 100;
-static int const STATUS_TAG = 200;
-static int const IMAGE_TAG = 300;
-
+static NSString * const CELL_ID = @"friendsCell";
+static NSString * const ERROR_LABEL_FONT_NAME = @"AppleSDGothicNeo-Light";
+static NSString * const REFRESH_DATE_FORMAT = @"HH:mm:ss";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[VKCApi sharedInstance] getFriends:self];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self initActivityIndicator];
+    [self initRefreshControl];
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,12 +35,6 @@ static int const IMAGE_TAG = 300;
 }
 
 #pragma mark - Table view data source
-
-- (void)configureCell:(id)cell atIndexPath:(NSIndexPath*)indexPath {
-    //id object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    
-    // Populate cell from the NSManagedObject instance
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -61,22 +45,13 @@ static int const IMAGE_TAG = 300;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_ID];
-    }
-    
-    [self configureCell:cell atIndexPath:indexPath]; //TODO: MOVE TO THIS LOGIC
-    
-    UILabel *nameLabel = (UILabel *)[cell viewWithTag:FRIEND_NAME_TAG];
-    UILabel *statusLabel = (UILabel *)[cell viewWithTag:STATUS_TAG];
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
+    VKCFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
     
     VKCUser *friend = [self.friendsArray objectAtIndex:indexPath.row];
-    nameLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
-    statusLabel.text = friend.status;
-    [imageView displayImageWithURL:friend.photo100];
+    
+    cell.name.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
+    cell.status.text = friend.status;
+    [cell.photo displayImageWithURL:friend.photo100];
     return cell;
 }
 
@@ -125,27 +100,72 @@ static int const IMAGE_TAG = 300;
 */
 
 
+#pragma mark - Helper methods
+
+- (void)initActivityIndicator {
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicator.center = CGPointMake(0, 0);
+    self.activityIndicator.hidesWhenStopped = YES;
+    self.tableView.backgroundView = self.activityIndicator;
+}
+
+- (void)initRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor iosLightBlue];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)setResfreshTitle {
+    NSDateFormatter *dateFormatte = [[NSDateFormatter alloc] init];
+    dateFormatte.dateFormat = REFRESH_DATE_FORMAT;
+    NSString *refreshTitle = [NSString stringWithFormat:NSLocalizedString(@"Last update: %@", @"Refresh control's update text"), [dateFormatte stringFromDate:[NSDate date]]];
+    NSDictionary *attributesDictionary = @{NSFontAttributeName : [UIFont fontWithName:ERROR_LABEL_FONT_NAME size:20],
+                                           NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:refreshTitle attributes:attributesDictionary];
+}
+
+- (void)showErrorMessage {
+    UILabel *errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    errorLabel.text = NSLocalizedString(@"Hm....something gone wrong with data=(", @"Error label shown in friends table view");
+    errorLabel.textColor = [UIColor blackColor];
+    errorLabel.numberOfLines = 0;
+    errorLabel.textAlignment = NSTextAlignmentCenter;
+    errorLabel.font = [UIFont fontWithName:ERROR_LABEL_FONT_NAME size:20];
+    [errorLabel sizeToFit];
+    self.tableView.backgroundView = errorLabel;
+}
+
+- (void)loadData {
+    [[VKCApi sharedInstance] getFriends:self];
+}
+
 #pragma mark - Callbakc
 
 - (void)loadingStart {
-    self.tableView.hidden = YES;
     [self.activityIndicator startAnimating];
 }
 
 - (void)loadingFinished:(id)data {
-    self.tableView.hidden = NO;
-    [self.activityIndicator stopAnimating];
+    if (self.refreshControl.isRefreshing) {
+        [self setResfreshTitle];
+        [self.refreshControl endRefreshing];
+    }
     
     if (data) {
         [[VKCModelController sharedInstance] saveUsers:data];//TODO: JUST FOR TIME
-
         self.friendsArray = data;
         [self.tableView reloadData];
+        [self.activityIndicator stopAnimating];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return;
     }
+    [self loadingFailed:nil];
+
 }
 
 - (void)loadingFailed:(id)error {
-    self.tableView.hidden = YES;
+    [self showErrorMessage];
     [self.activityIndicator stopAnimating];
 }
 

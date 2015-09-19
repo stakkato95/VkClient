@@ -11,7 +11,9 @@
 #import "VKCApi.h"
 #import "UIImageView+ImageLoader.h"
 #import "VKCModelController.h"
+#import "VKCFriendCell.h"
+#import "UIColor+Extensions.h"
 
-@interface VKCFriendsTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, VKCCallback>
+@interface VKCFriendsTableViewController : UITableViewController <VKCCallback>
 
 @end

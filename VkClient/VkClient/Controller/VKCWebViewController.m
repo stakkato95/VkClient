@@ -16,17 +16,12 @@
 @interface VKCWebViewController()
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property UIAlertView *alert;
 
 @end
 
-@implementation VKCWebViewController {
-    
-    
-    UIAlertView *alert;
-    
-}
+@implementation VKCWebViewController
 
 #pragma mark - WebViewController
 
@@ -72,12 +67,12 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [self hideActivityIndicator];
     if (error.code != WebKitErrorFrameLoadInterruptedByPolicyChange) {
-        alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Something has gone wrong while attempting to authorize you", @"Error title that is shown in login screen")
+        self.alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Something has gone wrong while attempting to authorize you", @"Error title that is shown in login screen")
                                            message:[error localizedDescription]
                                           delegate:self
                                  cancelButtonTitle:nil
                                  otherButtonTitles:NSLocalizedString(@"Retry", @"Button"), nil];
-        [alert show];
+        [self.alert show];
     }
 }
 
@@ -87,7 +82,7 @@
 // Called when a button is clicked. The view will be automatically dismissed after this call returns
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex != [alertView cancelButtonIndex]) {
-        [alert dismissWithClickedButtonIndex:buttonIndex animated:YES];
+        [self.alert dismissWithClickedButtonIndex:buttonIndex animated:YES];
         [self sendAuthRequest];
     }
 }
@@ -98,12 +93,12 @@
 - (void)hideActivityIndicator {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self.activityIndicator stopAnimating];
-    self.activityIndicator.hidden = YES;
+    //self.activityIndicator.hidden = YES;
 }
 
 - (void)showActivityIndicator {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    self.activityIndicator.hidden = NO;
+    //self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
 }
 
