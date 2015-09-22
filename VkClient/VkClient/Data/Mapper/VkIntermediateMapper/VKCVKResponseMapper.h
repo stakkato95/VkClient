@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VKCMapper.h"
-#import "VKCMapperItem.h"
+#import "VKCItemMapper.h"
 #import "VKCVKResponse.h"
 #import "VKCJSONConstants.h"
 #import "VKCVKArrayWrapMapper.h"

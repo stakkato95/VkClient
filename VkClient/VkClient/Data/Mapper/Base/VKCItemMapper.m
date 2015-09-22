@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Artsiom Kaliaha. All rights reserved.
 //
 
-#import "VKCMapperItem.h"
+#import "VKCItemMapper.h"
 
-@implementation VKCMapperItem
+@implementation VKCItemMapper
 
 + (instancetype)itemWithJSONKey:(NSString *)jsonKey
                    propertyName:(NSString *)propertyName
                          mapper:(id<VKCMapper>)mapper {
-    VKCMapperItem *mapperItem = [[VKCMapperItem alloc] init];
+    VKCItemMapper *mapperItem = [[VKCItemMapper alloc] init];
     mapperItem.jsonKey = jsonKey;
     mapperItem.propertyName = propertyName;
     mapperItem.mapper = mapper;

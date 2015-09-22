@@ -13,6 +13,9 @@
 
 @interface VKCModelController : NSObject <VKCSingleton>
 
+@property NSEntityDescription *userEntityDescription;
+@property NSEntityDescription *messageEntityDescription;
+
 - (void)saveUsers:(NSArray *)usersArray;
 
 @end

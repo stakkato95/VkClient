@@ -147,25 +147,25 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="NPg-zT-5Z3"/>
                                             <exclude reference="6Ph-KW-fIg"/>
-                                            <exclude reference="XM0-fm-fEx"/>
                                             <exclude reference="MCf-FF-jLN"/>
+                                            <exclude reference="NPg-zT-5Z3"/>
                                             <exclude reference="TYo-Ss-WEZ"/>
+                                            <exclude reference="XM0-fm-fEx"/>
                                             <exclude reference="cHr-ae-rVC"/>
                                             <exclude reference="f8v-Mq-HWr"/>
                                             <exclude reference="uyd-hp-BxX"/>
-                                            <exclude reference="rjb-Xd-X5C"/>
-                                            <exclude reference="e9J-4U-5XZ"/>
-                                            <exclude reference="zIe-5r-mOq"/>
-                                            <exclude reference="a7K-6W-ghu"/>
                                             <exclude reference="34M-RD-2xd"/>
-                                            <exclude reference="ZxB-sK-kG5"/>
-                                            <exclude reference="yuT-Va-3pf"/>
                                             <exclude reference="9Kv-7r-YEf"/>
-                                            <exclude reference="oqi-PC-ovX"/>
-                                            <exclude reference="A1w-HJ-JNw"/>
+                                            <exclude reference="ZxB-sK-kG5"/>
+                                            <exclude reference="a7K-6W-ghu"/>
+                                            <exclude reference="e9J-4U-5XZ"/>
+                                            <exclude reference="rjb-Xd-X5C"/>
+                                            <exclude reference="yuT-Va-3pf"/>
+                                            <exclude reference="zIe-5r-mOq"/>
                                             <exclude reference="8kB-WQ-1zk"/>
+                                            <exclude reference="A1w-HJ-JNw"/>
+                                            <exclude reference="oqi-PC-ovX"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -236,7 +236,7 @@
                 <tabBarController id="Ty2-7w-YIu" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Friends" id="V33-y4-aae"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lII-8F-B50">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

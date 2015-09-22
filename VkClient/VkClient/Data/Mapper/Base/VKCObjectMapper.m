@@ -12,15 +12,15 @@
     
     @private
     Class classOfEndObject;
-    NSArray *mapperItems;
+    NSArray *itemsMapper;
     
 }
 
 + (instancetype)objectMapperForType:(Class)classOfEndObject
-                        mapperItems:(NSArray *)mapperItems {
+                        mapperItems:(NSArray *)itemsMapper {
     VKCObjectMapper *objectMapper = [[VKCObjectMapper alloc] init];
     objectMapper->classOfEndObject = classOfEndObject;
-    objectMapper->mapperItems = mapperItems;
+    objectMapper->itemsMapper = itemsMapper;
     return objectMapper;
 }
 
@@ -28,7 +28,7 @@
 - (id)mapFromSourceObject:(id)sourceObject error:(NSError *)error {
     id endObject = [[self->classOfEndObject alloc] init];
     
-    for (VKCMapperItem *mapperItem in self->mapperItems) {
+    for (VKCItemMapper *mapperItem in self->itemsMapper) {
         id propertyName = mapperItem.propertyName;
         id<VKCMapper> propertyMapper = mapperItem.mapper;
         id propertyValue = [sourceObject valueForKey:mapperItem.jsonKey];

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VKCMapper.h"
 
-@interface VKCMapperItem : NSObject
+@interface VKCItemMapper : NSObject
 
 @property NSString *jsonKey;
 @property NSString *propertyName;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VKCMapper.h"
-#import "VKCMapperItem.h"
+#import "VKCItemMapper.h"
 
 @interface VKCObjectMapper : NSObject <VKCMapper>
 

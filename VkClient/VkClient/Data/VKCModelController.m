@@ -12,7 +12,6 @@
 @implementation VKCModelController
 
 static NSString * const USER_ENTITY = @"User";
-static NSEntityDescription *userEntityDescription;
 
 + (instancetype)sharedInstance {
     static VKCModelController *instance = nil;
@@ -26,7 +25,7 @@ static NSEntityDescription *userEntityDescription;
 
 - (void)saveUsers:(NSArray *)usersArray {
     for (VKCUser* user in usersArray) {
-        NSManagedObject *userManagedObject = [[NSManagedObject alloc] initWithEntity:userEntityDescription insertIntoManagedObjectContext:[VKCCoreDataController sharedInstance].context];
+        NSManagedObject *userManagedObject = [[NSManagedObject alloc] initWithEntity:self.userEntityDescription insertIntoManagedObjectContext:[VKCCoreDataController sharedInstance].context];
         [userManagedObject setValue:user.firstName forKey:@"firstName"];
         [userManagedObject setValue:user.lastName forKey:@"lastName"];        
         [userManagedObject setValue:user.status forKey:@"status"];
@@ -38,7 +37,7 @@ static NSEntityDescription *userEntityDescription;
 #pragma mark - Helper methods
 
 - (void)initEntities {
-    userEntityDescription = [NSEntityDescription entityForName:USER_ENTITY inManagedObjectContext:[VKCCoreDataController sharedInstance].context];
+    self.userEntityDescription = [NSEntityDescription entityForName:USER_ENTITY inManagedObjectContext:[VKCCoreDataController sharedInstance].context];
 }
 
 @end

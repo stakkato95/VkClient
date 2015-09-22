@@ -22,7 +22,7 @@
 }
 
 - (id)mapFromSourceObject:(id)sourceObject error:(NSError *)error {
-    VKCObjectMapper *wrapMapper = [VKCObjectMapper objectMapperForType:[VKCVKResponse class] mapperItems:@[[VKCMapperItem itemWithJSONKey:RESPONSE propertyName:RESPONSE mapper:self->vkArrayWrapMapper]]];
+    VKCObjectMapper *wrapMapper = [VKCObjectMapper objectMapperForType:[VKCVKResponse class] mapperItems:@[[VKCItemMapper itemWithJSONKey:RESPONSE propertyName:RESPONSE mapper:self->vkArrayWrapMapper]]];
     return [wrapMapper mapFromSourceObject:sourceObject error:error];
 }
 
